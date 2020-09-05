@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://www.unsw.edu.au/sites/default/files/favicon.ico">
+
+<title>Dongjie He's Home Page</title>
+
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="default.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154135520-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154135520-1');
+</script>
+
+
+<script>
+$(function () { $('[data-toggle="tooltip"]').tooltip() })
+</script>
+
+</head>
+
+<body>
+<div class="container">
+<div class="page-header clearfix">
+<img src="HE2019.jpg" 
+class="img-circle pull-right profile-img"
+width="110"/>
+<div>
+<h2 style="margin-bottom:5mm" class="my-name">Dongjie He <!--(&#20309;&#20908;&#26480;) --> </h2>
+<p class="info">
+<nobr>Ph.D. Student,</nobr>
+<a href="https://www.engineering.unsw.edu.au/computer-science-engineering/">
+<nobr>Department of CSE,</nobr>
+<nobr>UNSW</nobr>
+</a>
+</p>
+<p class="info">
+<span
+id="address"
+class="glyphicon glyphicon-map-marker"
+data-toggle="tooltip" data-placement="bottom"
+title="Room 501-15, K-17 Building">
+</span>
+&nbsp;
+<a id="mailto_a" href="">
+<span id="mailto"
+class="glyphicon glyphicon-envelope"
+data-toggle="tooltip" data-placement="bottom">
+</span>
+</a>
+<script>
+function xor(s, x) {
+    var ret = "";
+    for (i = 0; i < s.length; i++)
+        ret += String.fromCharCode(s.charCodeAt(i) ^ x);
+    return ret;
+}
+var email_addr = xor('chi`mnbo',7)+'@'+'cse.unsw.edu.au';
+$('#mailto').attr('title', email_addr);
+$('#mailto_a').attr('href','mailto:'+email_addr);
+</script>
+&nbsp;
+<span id="edu"
+class="glyphicon glyphicon-education"
+data-toggle="tooltip" data-placement="bottom" title="M.E from ICT & UCAS, B.S from BNU">
+</span>
+&nbsp;
+<a id="mailto_a" href="http://www.cse.unsw.edu.au/~jingling/">
+<span id="supervisor"
+class="glyphicon glyphicon-user"
+data-toggle="tooltip" data-placement="right" title="supervisor">
+</span>
+</a>
+
+</p>
+
+</div>
+</div>
+
+<div class="page-body clearfix">
+<div class="row" style="margin-bottom:5mm">
+<!--
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+-->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-heading">Research Interests</div>
+<p class="research-interest">
+My interests lie in programming language and software engineering. Currently, I do research on <a href=https://dl.acm.org/citation.cfm?id=2802195>Java Pointer Analysis</a>.
+<!-- 
+
+-->
+</p>
+</div>
+
+<!--
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+<h4>Projects</h4>
+</div>
+-->
+
+</div>
+
+<hr/>
+<div>
+<div class="section-heading">Publications</div>
+
+<div class="pub-entry">
+<div>
+<span class="pull-right venue-sticker">
+<a
+href="https://2020.issre.net">ISSRE'20</a>
+</span>
+<div class="paper-title">
+Exposing Android Event-Based Races by Selective Branch Instrumentation
+</div>
+</div>
+<p class="author-list">
+<small>Diyu Wu, <b>Dongjie He</b>, Shiping Chen and Jingling Xue</small>
+</p>
+<small><b>Accepted</b></small>
+</div>
+</div>
+
+<div class="pub-entry">
+<div>
+<span class="pull-right venue-sticker">
+<a
+href="https://2020.issre.net">ISSRE'20</a>
+</span>
+<div class="paper-title">
+Correlating UI Contexts with Sensitive API Calls: Dynamic Semantic Extraction and Analysis
+</div>
+</div>
+<p class="author-list">
+<small>Jie Liu, <b>Dongjie He</b>, Diyu Wu and Jingling Xue</small>
+</p>
+<small><b>Accepted</b></small>
+</div>
+</div>
+
+<div class="pub-entry">
+<div>
+<span class="pull-right venue-sticker">
+<a
+href="https://2019.ase-conferences.org/">ASE'19</a>
+</span>
+<div class="paper-title">
+Performance-Boosting Sparsification of the IFDS Algorithm with Applications to Taint Analysis
+</div>
+</div>
+<p class="author-list">
+<small><b>Dongjie He</b>, Haofeng Li, Lei Wang, Haining Meng, Hengjie Zheng, Jie Liu, Shuangwei Hu, Lian Li and Jingling Xue</small>
+</p>
+<small> <a href="award/ASE19DistinguishedPaperAward.pdf"><font color="#990000"><b>Distinguished Paper Award</b></a> <!-- (1/6 in 85)--> </font></small>
+<div class="list-group-item-text">
+<p class="link-list">
+[
+    <a href="https://doi.org/10.1109/ASE.2019.00034">Paper</a>
+    |
+    <a href="slides/ASE19Slide.pdf">slides</a>
+]
+</p>
+</div>
+</div>
+
+<div class="pub-entry">
+<div>
+<span class="pull-right venue-sticker">
+<a
+href="https://www.conference-publishing.com/list.php?Event=ASE18">ASE'18</a>
+</span>
+<div class="paper-title">
+Understanding and Detecting Evolution-Induced Compatibility Issues in Android Apps
+</div>
+</div>
+<p class="author-list">
+<small><b> Dongjie He</b>, Lian Li, Lei Wang, Hengjie Zheng, Guangwei Li, and Jingling Xue.</small>
+</p>
+
+<div class="list-group-item-text">
+<p class="link-list">
+[
+    <a href="https://dl.acm.org/doi/abs/10.1145/3238147.3238185">Paper</a>
+    |
+    <a href="slides/ase18-slides.pdf">slides</a>
+]
+</p>
+</div>
+</div>
+
+
+<hr/>
+<div class="section-heading">Academic Services</div>
+<ul>
+    <li> Web Chair: CGO 2020 </li>
+</ul>
+</div> <!-- /container -->
+
+</body>
+</html>
+

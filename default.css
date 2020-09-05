@@ -1,0 +1,114 @@
+body {
+  padding-bottom: 20px;
+  font-family: Optima, 'Merriweather Sans', sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 780px;
+  }
+}
+
+a {
+  color: #048444;
+}
+
+a:hover {
+  color: #B40404;
+  text-decoration: none;
+}
+
+.section-heading {
+  font-size: 125%;
+}
+
+.page-header,
+.page-body,
+.page-footer {
+  font-size: 13.5pt;
+}
+
+.page-header {
+  border-bottom: 0px;
+  border-radius: 6px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  padding-right: 20px;
+  padding-left: 20px;
+/*  background: #f6e58d; */
+  background: #F8D76E;
+}
+
+.info {
+}
+
+.info > a {
+  color: #000000;
+}
+
+.info > a:hover {
+  color: #000000;
+}
+
+.page-footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.my-name {
+  font-size: 200%;
+  font-weight: 400;
+}
+
+.profile-img {
+  border: 0px solid #353b48;
+  margin-top:4mm;
+}
+
+.glyphicon {
+  color: #000000;
+}
+
+.research-interest {
+  margin-top : 12px;
+  margin-left: 6mm;
+}
+
+.author-list {
+  font-size: 80%;
+}
+
+.link-list {
+  margin-bottom:0
+}
+
+.paper-title {
+  color: #000000;
+  font-size: 100%;
+  font-weight: 400 
+}
+
+.venue-sticker {
+  color: #000000;
+  font-size: 111%;
+}
+
+.paper-blurb {
+  margin-top: 2mm;
+  margin-left: 1cm;
+  font-style: italic;
+}
+
+.pub-entry {
+  border-radius: 6px;
+  margin-top: 5mm;
+  margin-bottom: 1mm;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: #F0F0F8;
+}
