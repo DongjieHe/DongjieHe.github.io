@@ -26,20 +26,6 @@
   gtag('config', 'UA-154135520-1');
 </script>
 
-<script>
-$(function () { $('[data-toggle="tooltip"]').tooltip() })
-
-function xor(s, x) {
-    var ret = "";
-    for (i = 0; i < s.length; i++)
-        ret += String.fromCharCode(s.charCodeAt(i) ^ x);
-    return ret;
-}
-var email_addr = xor('chi`mnbo',7)+'@'+'cse.unsw.edu.au';
-$('#mailto').attr('title', email_addr);
-$('#mailto_a').attr('href','mailto:'+email_addr);
-</script>
-
 </head>
 
 <body>
@@ -50,7 +36,7 @@ $('#mailto_a').attr('href','mailto:'+email_addr);
 <p class="info"> <nobr>Ph.D. Student,</nobr> <a href="https://www.engineering.unsw.edu.au/computer-science-engineering/"> <nobr>Department of CSE,</nobr> <nobr>UNSW</nobr> </a> </p>
 <p class="info"> <span id="address" class="glyphicon glyphicon-map-marker" data-toggle="tooltip" data-placement="bottom" title="Room 501-15, K-17 Building"> </span>
 &nbsp;
-<a id="mailto_a" href=""> <span id="mailto" class="glyphicon glyphicon-envelope" data-toggle="tooltip" data-placement="bottom"> </span> </a>
+<a id="mailto_a" href=""> <span id="mailto" class="glyphicon glyphicon-envelope" data-toggle="tooltip" title="dongjieh AT cse.unsw.edu.au" data-placement="bottom"> </span> </a>
 &nbsp;
 <span id="edu" class="glyphicon glyphicon-education" data-toggle="tooltip" data-placement="bottom" title="M.E from ICT & UCAS, B.S from BNU"> </span>
 &nbsp;
