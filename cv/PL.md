@@ -75,3 +75,22 @@ void <init>(java.lang.Object, java.util.LinkedList$Entry, java.util.LinkedList$E
     return;
 }
 ```
+3. inner class
+```
+static class UnmodifiableEntrySet<K, V> extends Collections.UnmodifiableSet<Map.Entry<K, V>> {
+      UnmodifiableEntrySet(Set<? extends Map.Entry<? extends K, ? extends V>> param2Set) {
+        super(param2Set);
+      }
+      public Iterator<Map.Entry<K, V>> iterator() {
+        return new Iterator<Map.Entry<K, V>>() {
+            Iterator<? extends Map.Entry<? extends K, ? extends V>> i = Collections.UnmodifiableMap.UnmodifiableEntrySet.this.c.iterator();
+            public boolean hasNext() {
+              return this.i.hasNext();
+            }
+            public Map.Entry<K, V> next() {
+              return new Collections.UnmodifiableMap.UnmodifiableEntrySet.UnmodifiableEntry<K, V>(this.i.next());
+            }
+          };
+      }
+}
+```
