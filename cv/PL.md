@@ -94,3 +94,31 @@ static class UnmodifiableEntrySet<K, V> extends Collections.UnmodifiableSet<Map.
       }
 }
 ```
+4. <java.util.LinkedList: java.lang.Object[] toArray()>
+```
+public java.lang.Object[] toArray() {
+    java.util.LinkedList l0;
+    int $stack4, $stack7, l2;
+    java.lang.Object[] l1;
+    java.util.LinkedList$Entry $stack5, $stack6, l3;
+    java.lang.Object $stack8;
+
+    l0 := @this: java.util.LinkedList;
+    $stack4 = l0.<java.util.LinkedList: int size>;
+    l1 = newarray (java.lang.Object)[$stack4];
+    l2 = 0;
+    $stack5 = l0.<java.util.LinkedList: java.util.LinkedList$Entry header>;
+    l3 = $stack5.<java.util.LinkedList$Entry: java.util.LinkedList$Entry next>;
+ label1:
+    $stack6 = l0.<java.util.LinkedList: java.util.LinkedList$Entry header>;
+    if l3 == $stack6 goto label2;
+    $stack7 = l2;
+    l2 = l2 + 1;
+    $stack8 = l3.<java.util.LinkedList$Entry: java.lang.Object element>;
+    l1[$stack7] = $stack8;
+    l3 = l3.<java.util.LinkedList$Entry: java.util.LinkedList$Entry next>;
+    goto label1;
+ label2:
+    return l1;
+}
+```
