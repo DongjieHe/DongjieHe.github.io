@@ -33,3 +33,45 @@ private void <init>(java.util.IdentityHashMap) {
     return;
 }
 ```
+2. <java.util.LinkedList: java.util.LinkedList$Entry addBefore(java.lang.Object,java.util.LinkedList$Entry)>
+```
+private java.util.LinkedList$Entry addBefore(java.lang.Object, java.util.LinkedList$Entry) {
+    java.util.LinkedList$Entry $stack4, l2, $stack5, l3, $stack6, $stack7;
+    java.lang.Object l1;
+    java.util.LinkedList l0;
+    int $stack8, $stack9, $stack10, $stack11;
+
+    l0 := @this: java.util.LinkedList;
+    l1 := @parameter0: java.lang.Object;
+    l2 := @parameter1: java.util.LinkedList$Entry;
+    $stack4 = new java.util.LinkedList$Entry;
+    $stack5 = l2.<java.util.LinkedList$Entry: java.util.LinkedList$Entry previous>;
+    specialinvoke $stack4.<java.util.LinkedList$Entry: void <init>(java.lang.Object,java.util.LinkedList$Entry,java.util.LinkedList$Entry)>(l1, l2, $stack5);
+    l3 = $stack4;
+    $stack6 = l3.<java.util.LinkedList$Entry: java.util.LinkedList$Entry previous>;
+    $stack6.<java.util.LinkedList$Entry: java.util.LinkedList$Entry next> = l3;
+    $stack7 = l3.<java.util.LinkedList$Entry: java.util.LinkedList$Entry next>;
+    $stack7.<java.util.LinkedList$Entry: java.util.LinkedList$Entry previous> = l3;
+    $stack8 = l0.<java.util.LinkedList: int size>;
+    $stack9 = $stack8 + 1;
+    l0.<java.util.LinkedList: int size> = $stack9;
+    $stack10 = l0.<java.util.LinkedList: int modCount>;
+    $stack11 = $stack10 + 1;
+    l0.<java.util.LinkedList: int modCount> = $stack11;
+    return l3;
+}
+void <init>(java.lang.Object, java.util.LinkedList$Entry, java.util.LinkedList$Entry) {
+    java.util.LinkedList$Entry l0, l2, l3;
+    java.lang.Object l1;
+
+    l0 := @this: java.util.LinkedList$Entry;
+    l1 := @parameter0: java.lang.Object;
+    l2 := @parameter1: java.util.LinkedList$Entry;
+    l3 := @parameter2: java.util.LinkedList$Entry;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    l0.<java.util.LinkedList$Entry: java.lang.Object element> = l1;
+    l0.<java.util.LinkedList$Entry: java.util.LinkedList$Entry next> = l2;
+    l0.<java.util.LinkedList$Entry: java.util.LinkedList$Entry previous> = l3;
+    return;
+}
+```
