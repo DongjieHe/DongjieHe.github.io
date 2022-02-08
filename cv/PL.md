@@ -122,3 +122,36 @@ public java.lang.Object[] toArray() {
     return l1;
 }
 ```
+5. <java.util.HashMap: java.lang.Object clone()>
+```
+public java.lang.Object clone() {
+    java.util.HashMap l0, l1;
+    java.lang.Object $stack3;
+    java.util.HashMap$Entry[] $stack4, $stack6;
+    int $stack5;
+    java.lang.CloneNotSupportedException $stack7, l2;
+
+    l0 := @this: java.util.HashMap;
+    l1 = null;
+ label1:
+    $stack3 = specialinvoke l0.<java.util.AbstractMap: java.lang.Object clone()>();
+    l1 = (java.util.HashMap) $stack3;
+ label2:
+    goto label4;
+ label3:
+        $stack7 := @caughtexception;
+        l2 = $stack7;
+ label4:
+    $stack4 = l0.<java.util.HashMap: java.util.HashMap$Entry[] table>;
+    $stack5 = lengthof $stack4;
+    $stack6 = newarray (java.util.HashMap$Entry)[$stack5];
+    l1.<java.util.HashMap: java.util.HashMap$Entry[] table> = $stack6;
+    l1.<java.util.HashMap: java.util.Set entrySet> = null;
+    l1.<java.util.HashMap: int modCount> = 0;
+    l1.<java.util.HashMap: int size> = 0;
+    virtualinvoke l1.<java.util.HashMap: void init()>();
+    specialinvoke l1.<java.util.HashMap: void putAllForCreate(java.util.Map)>(l0);
+    return l1;
+    catch java.lang.CloneNotSupportedException from label1 to label2 with label3;
+}
+```
