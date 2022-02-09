@@ -182,4 +182,15 @@ public void setLayeredPane(JLayeredPane paramJLayeredPane) {
     this.layeredPane = paramJLayeredPane;
 }
 ```
-7.
+7. <java.util.zip.ZipInputStream: void <init>(java.io.InputStream)>
+```
+public ZipInputStream(InputStream paramInputStream) {
+    super(new PushbackInputStream(paramInputStream, 512), new Inflater(true), 512);
+}
+public InflaterInputStream(InputStream paramInputStream, Inflater paramInflater, int paramInt) {
+    super(paramInputStream);
+}
+protected FilterInputStream(InputStream paramInputStream) {
+    this.in = paramInputStream;
+}
+```
