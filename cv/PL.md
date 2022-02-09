@@ -158,22 +158,28 @@ public java.lang.Object clone() {
 6. <javax.swing.JRootPane: javax.swing.JLayeredPane createLayeredPane()>
 ```
 protected javax.swing.JLayeredPane createLayeredPane() {
-        javax.swing.JLayeredPane $stack2, l1;
-        java.lang.StringBuilder $stack3, $stack5, $stack6;
-        javax.swing.JRootPane l0;
-        java.lang.String $stack4, $stack7;
-        l0 := @this: javax.swing.JRootPane;
-        $stack2 = new javax.swing.JLayeredPane;
-        specialinvoke $stack2.<javax.swing.JLayeredPane: void <init>()>();
-        l1 = $stack2;
-        $stack3 = new java.lang.StringBuilder;
-        specialinvoke $stack3.<java.lang.StringBuilder: void <init>()>();
-        $stack4 = virtualinvoke l0.<javax.swing.JRootPane: java.lang.String getName()>();
-        $stack5 = virtualinvoke $stack3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($stack4);
-        $stack6 = virtualinvoke $stack5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".layeredPane");
-        $stack7 = virtualinvoke $stack6.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke l1.<javax.swing.JLayeredPane: void setName(java.lang.String)>($stack7);
-        return l1;
-    }
+    javax.swing.JLayeredPane $stack2, l1;
+    java.lang.StringBuilder $stack3, $stack5, $stack6;
+    javax.swing.JRootPane l0;
+    java.lang.String $stack4, $stack7;
+    l0 := @this: javax.swing.JRootPane;
+    $stack2 = new javax.swing.JLayeredPane;
+    specialinvoke $stack2.<javax.swing.JLayeredPane: void <init>()>();
+    l1 = $stack2;
+    $stack3 = new java.lang.StringBuilder;
+    specialinvoke $stack3.<java.lang.StringBuilder: void <init>()>();
+    $stack4 = virtualinvoke l0.<javax.swing.JRootPane: java.lang.String getName()>();
+    $stack5 = virtualinvoke $stack3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($stack4);
+    $stack6 = virtualinvoke $stack5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".layeredPane");
+    $stack7 = virtualinvoke $stack6.<java.lang.StringBuilder: java.lang.String toString()>();
+    virtualinvoke l1.<javax.swing.JLayeredPane: void setName(java.lang.String)>($stack7);
+    return l1;
+}
+public JRootPane() {
+    setLayeredPane(createLayeredPane());
+}   
+public void setLayeredPane(JLayeredPane paramJLayeredPane) {
+    this.layeredPane = paramJLayeredPane;
+}
 ```
 7.
