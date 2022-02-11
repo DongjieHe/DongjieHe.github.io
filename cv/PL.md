@@ -194,4 +194,57 @@ protected FilterInputStream(InputStream paramInputStream) {
     this.in = paramInputStream;
 }
 ```
-8.     
+8. <org.eclipse.core.internal.resources.MarkerSet: org.eclipse.core.internal.resources.IMarkerSetElement[] elements()>    
+```
+public org.eclipse.core.internal.resources.IMarkerSetElement[] elements() {
+    org.eclipse.core.internal.resources.MarkerSet this;
+    int $stack5, $stack11, j, i, $stack7;
+    org.eclipse.core.internal.resources.IMarkerSetElement[] result, $stack8, $stack6;
+    org.eclipse.core.internal.resources.IMarkerSetElement element;
+
+    this := @this: org.eclipse.core.internal.resources.MarkerSet;
+    $stack5 = this.<org.eclipse.core.internal.resources.MarkerSet: int elementCount>;
+    result = newarray (org.eclipse.core.internal.resources.IMarkerSetElement)[$stack5];
+    j = 0;
+    i = 0;
+    goto label3;
+ label1:
+    $stack8 = this.<org.eclipse.core.internal.resources.MarkerSet: org.eclipse.core.internal.resources.IMarkerSetElement[] elements>;
+    element = $stack8[i];
+    if element == null goto label2;
+    $stack11 = j;
+    j = j + 1;
+    result[$stack11] = element;
+ label2:
+    i = i + 1;
+ label3:
+    $stack6 = this.<org.eclipse.core.internal.resources.MarkerSet: org.eclipse.core.internal.resources.IMarkerSetElement[] elements>;
+    $stack7 = lengthof $stack6;
+    if i < $stack7 goto label1;
+    return result;
+}    
+```  
+9. <org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] getListeners()>
+```
+public synchronized java.lang.Object[] getListeners() {
+    org.eclipse.debug.internal.core.ListenerList this;
+    int $stack2, $stack3, $stack4;
+    java.lang.Object[] result, $stack5, $stack6;
+    java.lang.Object nativeArrayCopy7;
+
+    this := @this: org.eclipse.debug.internal.core.ListenerList;
+    $stack2 = this.<org.eclipse.debug.internal.core.ListenerList: int fSize>;
+    if $stack2 != 0 goto label1;
+    $stack6 = <org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] EmptyArray>;
+    return $stack6;
+ label1:
+    $stack3 = this.<org.eclipse.debug.internal.core.ListenerList: int fSize>;
+    result = newarray (java.lang.Object)[$stack3];
+    $stack5 = this.<org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] fListeners>;
+    $stack4 = this.<org.eclipse.debug.internal.core.ListenerList: int fSize>;
+    staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($stack5, 0, result, 0, $stack4);
+    nativeArrayCopy7 = $stack5[0];
+    result[0] = nativeArrayCopy7;
+    return result;
+}
+```    
