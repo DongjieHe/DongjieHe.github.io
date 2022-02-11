@@ -248,3 +248,21 @@ public synchronized java.lang.Object[] getListeners() {
     return result;
 }
 ```    
+10．<java.util.Hashtable: java.util.Collection values()>
+```
+public java.util.Collection values() {
+    java.util.Hashtable l0;
+    java.util.Collection $stack1, $stack2, $stack4;
+    java.util.Hashtable$ValueCollection $stack3;
+    l0 := @this: java.util.Hashtable;
+    $stack1 = l0.<java.util.Hashtable: java.util.Collection values>;
+    if $stack1 != null goto label1;
+    $stack3 = new java.util.Hashtable$ValueCollection;
+    specialinvoke $stack3.<java.util.Hashtable$ValueCollection: void <init>(java.util.Hashtable,java.util.Hashtable$1)>(l0, null);
+    $stack4 = staticinvoke <java.util.Collections: java.util.Collection synchronizedCollection(java.util.Collection,java.lang.Object)>($stack3, l0);
+    l0.<java.util.Hashtable: java.util.Collection values> = $stack4;
+ label1:
+    $stack2 = l0.<java.util.Hashtable: java.util.Collection values>;
+    return $stack2;
+}    
+```    
