@@ -284,3 +284,21 @@ public java.util.Collection values() {
     return $stack2;
 }    
 ```    
+11. <java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1: java.util.Map$Entry next()>
+```
+public java.util.Map$Entry next() {
+    java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntry $stack1;
+    java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1 l0;
+    java.util.Iterator $stack2;
+    java.lang.Object $stack3;
+    java.util.Map$Entry $stack4;
+
+    l0 := @this: java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1;
+    $stack1 = new java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntry;
+    $stack2 = l0.<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1: java.util.Iterator i>;
+    $stack3 = interfaceinvoke $stack2.<java.util.Iterator: java.lang.Object next()>();
+    $stack4 = (java.util.Map$Entry) $stack3;
+    specialinvoke $stack1.<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntry: void <init>(java.util.Map$Entry)>($stack4);
+    return $stack1;
+}
+```    
