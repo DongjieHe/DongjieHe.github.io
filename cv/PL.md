@@ -121,6 +121,24 @@ public java.lang.Object[] toArray() {
  label2:
     return l1;
 }
+4-1. <java.util.AbstractCollection: java.lang.Object[] toArray()>
+```
+public java.lang.Object[] toArray() {
+    java.util.AbstractCollection l0;
+    int $stack4, $stack6, l3;
+    java.lang.Object[] l1, $stack13, $stack8;
+    java.util.Iterator l2;
+    boolean $stack7, $stack9;
+    java.lang.Object $stack10;
+    l0 := @this: java.util.AbstractCollection;
+    $stack4 = virtualinvoke l0.<java.util.AbstractCollection: int size()>();
+    l1 = newarray (java.lang.Object)[$stack4];
+    l2 = virtualinvoke l0.<java.util.AbstractCollection: java.util.Iterator iterator()>();
+    $stack10 = interfaceinvoke l2.<java.util.Iterator: java.lang.Object next()>();
+    l1[l3] = $stack10;
+    $stack8 = l1;
+    return $stack8;
+}
 ```
 5. <java.util.HashMap: java.lang.Object clone()>
 ```
