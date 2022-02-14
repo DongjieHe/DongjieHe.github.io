@@ -315,3 +315,62 @@ public java.util.Map$Entry next() {
     return $stack1;
 }
 ```    
+# In static methods
+12. <java.util.Arrays: java.util.List asList(java.lang.Object[])>
+```
+public static transient java.util.List asList(java.lang.Object[]) {
+    java.util.Arrays$ArrayList $stack1;
+    java.lang.Object[] l0;
+    l0 := @parameter0: java.lang.Object[];
+    $stack1 = new java.util.Arrays$ArrayList;
+    specialinvoke $stack1.<java.util.Arrays$ArrayList: void <init>(java.lang.Object[])>(l0);
+    return $stack1;
+}
+void <init>(java.lang.Object[]) {
+    java.util.Arrays$ArrayList l0;
+    java.lang.Object[] l1;
+    java.lang.NullPointerException $stack2;
+    l0 := @this: java.util.Arrays$ArrayList;
+    l1 := @parameter0: java.lang.Object[];
+    specialinvoke l0.<java.util.AbstractList: void <init>()>();
+    if l1 != null goto label1;
+    $stack2 = new java.lang.NullPointerException;
+    specialinvoke $stack2.<java.lang.NullPointerException: void <init>()>();
+    throw $stack2;
+ label1:
+    l0.<java.util.Arrays$ArrayList: java.lang.Object[] a> = l1;
+    return;
+}
+```
+13. <java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>
+```
+public static java.lang.Object[] copyOf(java.lang.Object[], int, java.lang.Class) {
+    java.lang.Class l2, $stack4;
+    int l1, $stack7, $stack10;
+    java.lang.Object $stack5, nativeArrayCopy11;
+    java.lang.Object[] $stack6, l3, l0, $stack11, $stack12;
+    l0 := @parameter0: java.lang.Object[];
+    l1 := @parameter1: int;
+    l2 := @parameter2: java.lang.Class;
+    if l2 != class "[Ljava/lang/Object;" goto label1;
+    $stack11 = newarray (java.lang.Object)[l1];
+    $stack12 = (java.lang.Object[]) $stack11;
+    goto label2;
+ label1:
+    $stack4 = virtualinvoke l2.<java.lang.Class: java.lang.Class getComponentType()>();
+    $stack5 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>($stack4, l1);
+    $stack5 = newarray (java.lang.String)[1];
+    $stack5 = newarray (sun.security.jca.ProviderConfig)[1];
+    $stack6 = (java.lang.Object[]) $stack5;
+    $stack12 = (java.lang.Object[]) $stack6;
+ label2:
+    l3 = $stack12;
+    $stack7 = lengthof l0;
+    $stack10 = staticinvoke <java.lang.Math: int min(int,int)>($stack7, l1);
+    staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(l0, 0, l3, 0, $stack10);
+    l3[0] = nativeArrayCopy11;
+    nativeArrayCopy11 = l0[0];
+    return l3;
+}  
+```
+14.     
