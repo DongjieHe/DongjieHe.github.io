@@ -373,4 +373,132 @@ public static java.lang.Object[] copyOf(java.lang.Object[], int, java.lang.Class
     return l3;
 }  
 ```
-14.     
+14. <java.util.Collections: java.util.Set synchronizedSet(java.util.Set,java.lang.Object)>     
+```
+static java.util.Set synchronizedSet(java.util.Set, java.lang.Object) {
+    java.util.Collections$SynchronizedSet $stack2;
+    java.util.Set l0;
+    java.lang.Object l1;
+    l0 := @parameter0: java.util.Set;
+    l1 := @parameter1: java.lang.Object;
+    $stack2 = new java.util.Collections$SynchronizedSet;
+    specialinvoke $stack2.<java.util.Collections$SynchronizedSet: void <init>(java.util.Set,java.lang.Object)>(l0, l1);
+    return $stack2;
+}
+void <init>(java.util.Set, java.lang.Object) {
+    java.util.Collections$SynchronizedSet l0;
+    java.util.Set l1;
+    java.lang.Object l2;
+    l0 := @this: java.util.Collections$SynchronizedSet;
+    l1 := @parameter0: java.util.Set;
+    l2 := @parameter1: java.lang.Object;
+    specialinvoke l0.<java.util.Collections$SynchronizedCollection: void <init>(java.util.Collection,java.lang.Object)>(l1, l2);
+    return;
+}
+void <init>(java.util.Collection, java.lang.Object) {
+    java.util.Collections$SynchronizedCollection l0;
+    java.util.Collection l1;
+    java.lang.Object l2;
+    l0 := @this: java.util.Collections$SynchronizedCollection;
+    l1 := @parameter0: java.util.Collection;
+    l2 := @parameter1: java.lang.Object;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    l0.<java.util.Collections$SynchronizedCollection: java.util.Collection c> = l1;
+    l0.<java.util.Collections$SynchronizedCollection: java.lang.Object mutex> = l2;
+    return;
+}
+```
+15. <java.util.Collections: java.util.Map unmodifiableMap(java.util.Map)>
+```
+public static java.util.Map unmodifiableMap(java.util.Map) {
+    java.util.Collections$UnmodifiableMap $stack1;
+    java.util.Map l0;
+    l0 := @parameter0: java.util.Map;
+    $stack1 = new java.util.Collections$UnmodifiableMap;
+    specialinvoke $stack1.<java.util.Collections$UnmodifiableMap: void <init>(java.util.Map)>(l0);
+    return $stack1;
+}
+void <init>(java.util.Map) {
+    java.util.Collections$UnmodifiableMap l0;
+    java.util.Map l1;
+    java.lang.NullPointerException $stack2;
+    l0 := @this: java.util.Collections$UnmodifiableMap;
+    l1 := @parameter0: java.util.Map;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    l0.<java.util.Collections$UnmodifiableMap: java.util.Set keySet> = null;
+    l0.<java.util.Collections$UnmodifiableMap: java.util.Set entrySet> = null;
+    l0.<java.util.Collections$UnmodifiableMap: java.util.Collection values> = null;
+    if l1 != null goto label1;
+    $stack2 = new java.lang.NullPointerException;
+    specialinvoke $stack2.<java.lang.NullPointerException: void <init>()>();
+    throw $stack2;
+ label1:
+    l0.<java.util.Collections$UnmodifiableMap: java.util.Map m> = l1;
+    return;
+}
+```   
+16. <java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>
+```
+public static java.util.Set unmodifiableSet(java.util.Set) {
+    java.util.Collections$UnmodifiableSet $stack1;
+    java.util.Set l0;
+    l0 := @parameter0: java.util.Set;
+    $stack1 = new java.util.Collections$UnmodifiableSet;
+    specialinvoke $stack1.<java.util.Collections$UnmodifiableSet: void <init>(java.util.Set)>(l0);
+    return $stack1;
+}
+void <init>(java.util.Set) {
+    java.util.Collections$UnmodifiableSet l0;
+    java.util.Set l1;
+    l0 := @this: java.util.Collections$UnmodifiableSet;
+    l1 := @parameter0: java.util.Set;
+    specialinvoke l0.<java.util.Collections$UnmodifiableCollection: void <init>(java.util.Collection)>(l1);
+    return;
+}
+void <init>(java.util.Collection) {
+    java.util.Collections$UnmodifiableCollection l0;
+    java.util.Collection l1;
+    java.lang.NullPointerException $stack2;
+    l0 := @this: java.util.Collections$UnmodifiableCollection;
+    l1 := @parameter0: java.util.Collection;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    if l1 != null goto label1;
+    $stack2 = new java.lang.NullPointerException;
+    specialinvoke $stack2.<java.lang.NullPointerException: void <init>()>();
+    throw $stack2;
+ label1:
+    l0.<java.util.Collections$UnmodifiableCollection: java.util.Collection c> = l1;
+    return;
+}
+```   
+17. <java.util.Collections: java.util.Map synchronizedMap(java.util.Map)>
+```
+public static java.util.Map synchronizedMap(java.util.Map){
+    java.util.Collections$SynchronizedMap $stack1;
+    java.util.Map l0;
+    l0 := @parameter0: java.util.Map;
+    $stack1 = new java.util.Collections$SynchronizedMap;
+    specialinvoke $stack1.<java.util.Collections$SynchronizedMap: void <init>(java.util.Map)>(l0);
+    return $stack1;
+}
+void <init>(java.util.Map) {
+    java.util.Collections$SynchronizedMap l0;
+    java.util.Map l1;
+    java.lang.NullPointerException $stack2;
+    l0 := @this: java.util.Collections$SynchronizedMap;
+    l1 := @parameter0: java.util.Map;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    l0.<java.util.Collections$SynchronizedMap: java.util.Set keySet> = null;
+    l0.<java.util.Collections$SynchronizedMap: java.util.Set entrySet> = null;
+    l0.<java.util.Collections$SynchronizedMap: java.util.Collection values> = null;
+    if l1 != null goto label1;
+    $stack2 = new java.lang.NullPointerException;
+    specialinvoke $stack2.<java.lang.NullPointerException: void <init>()>();
+    throw $stack2;
+ label1:
+    l0.<java.util.Collections$SynchronizedMap: java.util.Map m> = l1;
+    l0.<java.util.Collections$SynchronizedMap: java.lang.Object mutex> = l0;
+    return;
+}
+```
+18.     
