@@ -714,3 +714,204 @@ void <init>(java.lang.Object, java.lang.ref.ReferenceQueue) {
     return;
 }
 ```
+21. <java.util.Collections: java.util.Collection unmodifiableCollection(java.util.Collection)>
+```
+public static java.util.Collection unmodifiableCollection(java.util.Collection) {
+    java.util.Collections$UnmodifiableCollection $stack1;
+    java.util.Collection l0;
+    l0 := @parameter0: java.util.Collection;
+    $stack1 = new java.util.Collections$UnmodifiableCollection;
+    specialinvoke $stack1.<java.util.Collections$UnmodifiableCollection: void <init>(java.util.Collection)>(l0);
+    return $stack1;
+}
+void <init>(java.util.Collection) {
+    java.util.Collections$UnmodifiableCollection l0;
+    java.util.Collection l1;
+    java.lang.NullPointerException $stack2;
+    l0 := @this: java.util.Collections$UnmodifiableCollection;
+    l1 := @parameter0: java.util.Collection;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    if l1 != null goto label1;
+    $stack2 = new java.lang.NullPointerException;
+    specialinvoke $stack2.<java.lang.NullPointerException: void <init>()>();
+    throw $stack2;
+ label1:
+    l0.<java.util.Collections$UnmodifiableCollection: java.util.Collection c> = l1;
+    return;
+}
+```
+22. <com.google.common.collect.Maps: java.util.Map$Entry immutableEntry(java.lang.Object,java.lang.Object)>   
+```
+public static java.util.Map$Entry immutableEntry(java.lang.Object, java.lang.Object) {
+    com.google.common.collect.ImmutableEntry $stack2;
+    java.lang.Object key, value;
+    key := @parameter0: java.lang.Object;
+    value := @parameter1: java.lang.Object;
+    $stack2 = new com.google.common.collect.ImmutableEntry;
+    specialinvoke $stack2.<com.google.common.collect.ImmutableEntry: void <init>(java.lang.Object,java.lang.Object)>(key, value);
+    return $stack2;
+}
+void <init>(java.lang.Object, java.lang.Object) {
+    com.google.common.collect.ImmutableEntry this;
+    java.lang.Object key, value;
+    this := @this: com.google.common.collect.ImmutableEntry;
+    key := @parameter0: java.lang.Object;
+    value := @parameter1: java.lang.Object;
+    specialinvoke this.<com.google.common.collect.AbstractMapEntry: void <init>()>();
+    this.<com.google.common.collect.ImmutableEntry: java.lang.Object key> = key;
+    this.<com.google.common.collect.ImmutableEntry: java.lang.Object value> = value;
+    return;
+}
+```
+23. <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[])>
+```
+static com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[]) {
+    java.lang.Object[] elements;
+    int $stack2;
+    com.google.common.collect.SingletonImmutableList $stack3, list;
+    java.lang.Object $stack4;
+    com.google.common.collect.ImmutableList $stack5, $stack6;
+    elements := @parameter0: java.lang.Object[];
+    $stack2 = lengthof elements;
+    lookupswitch($stack2)
+    {
+        case 0: goto label1;
+        case 1: goto label2;
+        default: goto label3;
+    };
+ label1:
+    $stack5 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+    return $stack5;
+ label2:
+    $stack3 = new com.google.common.collect.SingletonImmutableList;
+    $stack4 = elements[0];
+    specialinvoke $stack3.<com.google.common.collect.SingletonImmutableList: void <init>(java.lang.Object)>($stack4);
+    list = $stack3;
+    return list;
+ label3:
+    $stack6 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList construct(java.lang.Object[])>(elements);
+    return $stack6;
+}
+void <init>(java.lang.Object) {
+    com.google.common.collect.SingletonImmutableList this;
+    java.lang.Object element, $stack2;
+    this := @this: com.google.common.collect.SingletonImmutableList;
+    element := @parameter0: java.lang.Object;
+    specialinvoke this.<com.google.common.collect.ImmutableList: void <init>()>();
+    $stack2 = staticinvoke <com.google.common.base.Preconditions: java.lang.Object checkNotNull(java.lang.Object)>(element);
+    this.<com.google.common.collect.SingletonImmutableList: java.lang.Object element> = $stack2;
+    return;
+}
+public static java.lang.Object checkNotNull(java.lang.Object){
+    java.lang.Object reference;
+    java.lang.NullPointerException $stack1;
+    reference := @parameter0: java.lang.Object;
+    if reference != null goto label1;
+    $stack1 = new java.lang.NullPointerException;
+    specialinvoke $stack1.<java.lang.NullPointerException: void <init>()>();
+    throw $stack1;
+ label1:
+    return reference;
+}
+``` 
+24. <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList construct(java.lang.Object[])>
+```
+private static transient com.google.common.collect.ImmutableList construct(java.lang.Object[]) {
+    java.lang.Object[] elements;
+    int $stack2, i;
+    com.google.common.collect.RegularImmutableList $stack3;
+    java.lang.Object $stack4;
+    elements := @parameter0: java.lang.Object[];
+    i = 0;
+ label1:
+    $stack2 = lengthof elements;
+    if i >= $stack2 goto label2;
+    $stack4 = elements[i];
+    staticinvoke <com.google.common.collect.ObjectArrays: java.lang.Object checkElementNotNull(java.lang.Object,int)>($stack4, i);
+    i = i + 1;
+    goto label1;
+ label2:
+    $stack3 = new com.google.common.collect.RegularImmutableList;
+    specialinvoke $stack3.<com.google.common.collect.RegularImmutableList: void <init>(java.lang.Object[])>(elements);
+    return $stack3;
+}
+void <init>(java.lang.Object[]) {
+    com.google.common.collect.RegularImmutableList this;
+    java.lang.Object[] array;
+    int $stack2;
+    this := @this: com.google.common.collect.RegularImmutableList;
+    array := @parameter0: java.lang.Object[];
+    $stack2 = lengthof array;
+    specialinvoke this.<com.google.common.collect.RegularImmutableList: void <init>(java.lang.Object[],int,int)>(array, 0, $stack2);
+    return;
+}
+void <init>(java.lang.Object[], int, int) {
+    com.google.common.collect.RegularImmutableList this;
+    int offset, size;
+    java.lang.Object[] array;
+    this := @this: com.google.common.collect.RegularImmutableList;
+    array := @parameter0: java.lang.Object[];
+    offset := @parameter1: int;
+    size := @parameter2: int;
+    specialinvoke this.<com.google.common.collect.ImmutableList: void <init>()>();
+    this.<com.google.common.collect.RegularImmutableList: int offset> = offset;
+    this.<com.google.common.collect.RegularImmutableList: int size> = size;
+    this.<com.google.common.collect.RegularImmutableList: java.lang.Object[] array> = array;
+    return;
+}
+```
+25. <com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry newLinkedEntry(java.lang.Object,java.lang.Object,com.google.common.collect.RegularImmutableMap$LinkedEntry)>
+```
+private static com.google.common.collect.RegularImmutableMap$LinkedEntry newLinkedEntry(java.lang.Object, java.lang.Object, com.google.common.collect.RegularImmutableMap$LinkedEntry) {
+    com.google.common.collect.RegularImmutableMap$LinkedEntry next, $stack3;
+    java.lang.Object key, value;
+    com.google.common.collect.RegularImmutableMap$TerminalEntry $u0;
+    com.google.common.collect.RegularImmutableMap$NonTerminalEntry $u1;
+    key := @parameter0: java.lang.Object;
+    value := @parameter1: java.lang.Object;
+    next := @parameter2: com.google.common.collect.RegularImmutableMap$LinkedEntry;
+    if next != null goto label1;
+    $u0 = new com.google.common.collect.RegularImmutableMap$TerminalEntry;
+    $stack3 = $u0;
+    specialinvoke $u0.<com.google.common.collect.RegularImmutableMap$TerminalEntry: void <init>(java.lang.Object,java.lang.Object)>(key, value);
+    goto label2;
+ label1:
+    $u1 = new com.google.common.collect.RegularImmutableMap$NonTerminalEntry;
+    $stack3 = $u1;
+    specialinvoke $u1.<com.google.common.collect.RegularImmutableMap$NonTerminalEntry: void <init>(java.lang.Object,java.lang.Object,com.google.common.collect.RegularImmutableMap$LinkedEntry)>(key, value, next);
+ label2:
+    return $stack3;
+}
+void <init>(java.lang.Object, java.lang.Object, com.google.common.collect.RegularImmutableMap$LinkedEntry) {
+    com.google.common.collect.RegularImmutableMap$NonTerminalEntry this;
+    java.lang.Object key, value;
+    com.google.common.collect.RegularImmutableMap$LinkedEntry next;
+    this := @this: com.google.common.collect.RegularImmutableMap$NonTerminalEntry;
+    key := @parameter0: java.lang.Object;
+    value := @parameter1: java.lang.Object;
+    next := @parameter2: com.google.common.collect.RegularImmutableMap$LinkedEntry;
+    specialinvoke this.<com.google.common.collect.ImmutableEntry: void <init>(java.lang.Object,java.lang.Object)>(key, value);
+    this.<com.google.common.collect.RegularImmutableMap$NonTerminalEntry: com.google.common.collect.RegularImmutableMap$LinkedEntry next> = next;
+    return;
+}
+void <init>(java.lang.Object, java.lang.Object) {
+    com.google.common.collect.ImmutableEntry this;
+    java.lang.Object key, value;
+    this := @this: com.google.common.collect.ImmutableEntry;
+    key := @parameter0: java.lang.Object;
+    value := @parameter1: java.lang.Object;
+    specialinvoke this.<com.google.common.collect.AbstractMapEntry: void <init>()>();
+    this.<com.google.common.collect.ImmutableEntry: java.lang.Object key> = key;
+    this.<com.google.common.collect.ImmutableEntry: java.lang.Object value> = value;
+    return;
+}
+void <init>(java.lang.Object, java.lang.Object) {
+    com.google.common.collect.RegularImmutableMap$TerminalEntry this;
+    java.lang.Object key, value;
+    this := @this: com.google.common.collect.RegularImmutableMap$TerminalEntry;
+    key := @parameter0: java.lang.Object;
+    value := @parameter1: java.lang.Object;
+    specialinvoke this.<com.google.common.collect.ImmutableEntry: void <init>(java.lang.Object,java.lang.Object)>(key, value);
+    return;
+}
+```    
