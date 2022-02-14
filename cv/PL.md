@@ -646,5 +646,71 @@ private void <init>(java.io.OutputStream, java.lang.Object, java.nio.charset.Cha
 ```
 20. <java.beans.FeatureDescriptor: java.lang.ref.Reference createReference(java.lang.Object,boolean)>
 ```
-    
-```    
+static java.lang.ref.Reference createReference(java.lang.Object, boolean){
+    java.lang.Object l0;
+    boolean l1;
+    java.lang.ref.WeakReference $stack3;
+    java.lang.ref.SoftReference $stack5;
+    java.lang.ref.Reference l2;
+    l0 := @parameter0: java.lang.Object;
+    l1 := @parameter1: boolean;
+    l2 = null;
+    if l0 == null goto label2;
+    if l1 == 0 goto label1;
+    $stack5 = new java.lang.ref.SoftReference;
+    specialinvoke $stack5.<java.lang.ref.SoftReference: void <init>(java.lang.Object)>(l0);
+    l2 = $stack5;
+    goto label2;
+ label1:
+    $stack3 = new java.lang.ref.WeakReference;
+    specialinvoke $stack3.<java.lang.ref.WeakReference: void <init>(java.lang.Object)>(l0);
+    l2 = $stack3;
+ label2:
+    return l2;
+}
+public void <init>(java.lang.Object) {
+    java.lang.ref.WeakReference l0;
+    java.lang.Object l1;
+    l0 := @this: java.lang.ref.WeakReference;
+    l1 := @parameter0: java.lang.Object;
+    specialinvoke l0.<java.lang.ref.Reference: void <init>(java.lang.Object)>(l1);
+    return;
+}
+public void <init>(java.lang.Object) {
+    java.lang.ref.SoftReference l0;
+    java.lang.Object l1;
+    long $stack2;
+    l0 := @this: java.lang.ref.SoftReference;
+    l1 := @parameter0: java.lang.Object;
+    specialinvoke l0.<java.lang.ref.Reference: void <init>(java.lang.Object)>(l1);
+    $stack2 = <java.lang.ref.SoftReference: long clock>;
+    l0.<java.lang.ref.SoftReference: long timestamp> = $stack2;
+    return;
+}
+void <init>(java.lang.Object) {
+    java.lang.ref.Reference l0;
+    java.lang.Object l1;
+    l0 := @this: java.lang.ref.Reference;
+    l1 := @parameter0: java.lang.Object;
+    specialinvoke l0.<java.lang.ref.Reference: void <init>(java.lang.Object,java.lang.ref.ReferenceQueue)>(l1, null);
+    return;
+}
+void <init>(java.lang.Object, java.lang.ref.ReferenceQueue) {
+    java.lang.ref.Reference l0;
+    java.lang.Object l1;
+    java.lang.ref.ReferenceQueue l2, $stack3;
+    l0 := @this: java.lang.ref.Reference;
+    l1 := @parameter0: java.lang.Object;
+    l2 := @parameter1: java.lang.ref.ReferenceQueue;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    l0.<java.lang.ref.Reference: java.lang.Object referent> = l1;
+    if l2 != null goto label1;
+    $stack3 = <java.lang.ref.ReferenceQueue: java.lang.ref.ReferenceQueue NULL>;
+    goto label2;
+ label1:
+    $stack3 = l2;
+ label2:
+    l0.<java.lang.ref.Reference: java.lang.ref.ReferenceQueue queue> = $stack3;
+    return;
+}
+```
