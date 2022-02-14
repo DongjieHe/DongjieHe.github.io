@@ -501,4 +501,150 @@ void <init>(java.util.Map) {
     return;
 }
 ```
-18.     
+18. <sun.nio.cs.StreamDecoder: sun.nio.cs.StreamDecoder forInputStreamReader(java.io.InputStream,java.lang.Object,java.lang.String)>     
+```
+public static sun.nio.cs.StreamDecoder forInputStreamReader(java.io.InputStream, java.lang.Object, java.lang.String) throws java.io.UnsupportedEncodingException {
+    java.lang.String l2, l3;
+    boolean $stack5;
+    sun.nio.cs.StreamDecoder $stack7;
+    java.io.InputStream l0;
+    java.lang.Object l1;
+    java.nio.charset.Charset $stack8, $stack9;
+    l0 := @parameter0: java.io.InputStream;
+    l1 := @parameter1: java.lang.Object;
+    l2 := @parameter2: java.lang.String;
+    l3 = l2;
+    $stack9 = staticinvoke <java.nio.charset.Charset: java.nio.charset.Charset defaultCharset()>();
+    l3 = virtualinvoke $stack9.<java.nio.charset.Charset: java.lang.String name()>();
+ label1:
+    $stack5 = staticinvoke <java.nio.charset.Charset: boolean isSupported(java.lang.String)>(l3);
+    if $stack5 == 0 goto label3;
+    $stack7 = new sun.nio.cs.StreamDecoder;
+    $stack8 = staticinvoke <java.nio.charset.Charset: java.nio.charset.Charset forName(java.lang.String)>(l3);
+    specialinvoke $stack7.<sun.nio.cs.StreamDecoder: void <init>(java.io.InputStream,java.lang.Object,java.nio.charset.Charset)>(l0, l1, $stack8);
+ label2:
+    return $stack7;
+}
+void <init>(java.io.InputStream, java.lang.Object, java.nio.charset.Charset) {
+    sun.nio.cs.StreamDecoder l0;
+    java.io.InputStream l1;
+    java.lang.Object l2;
+    java.nio.charset.Charset l3;
+    java.nio.charset.CharsetDecoder $stack4, $stack6, $stack8;
+    java.nio.charset.CodingErrorAction $stack5, $stack7;
+    l0 := @this: sun.nio.cs.StreamDecoder;
+    l1 := @parameter0: java.io.InputStream;
+    l2 := @parameter1: java.lang.Object;
+    l3 := @parameter2: java.nio.charset.Charset;
+    $stack4 = virtualinvoke l3.<java.nio.charset.Charset: java.nio.charset.CharsetDecoder newDecoder()>();
+    $stack5 = <java.nio.charset.CodingErrorAction: java.nio.charset.CodingErrorAction REPLACE>;
+    $stack6 = virtualinvoke $stack4.<java.nio.charset.CharsetDecoder: java.nio.charset.CharsetDecoder onMalformedInput(java.nio.charset.CodingErrorAction)>($stack5);
+    $stack7 = <java.nio.charset.CodingErrorAction: java.nio.charset.CodingErrorAction REPLACE>;
+    $stack8 = virtualinvoke $stack6.<java.nio.charset.CharsetDecoder: java.nio.charset.CharsetDecoder onUnmappableCharacter(java.nio.charset.CodingErrorAction)>($stack7);
+    specialinvoke l0.<sun.nio.cs.StreamDecoder: void <init>(java.io.InputStream,java.lang.Object,java.nio.charset.CharsetDecoder)>(l1, l2, $stack8);
+    return;
+}
+void <init>(java.io.InputStream, java.lang.Object, java.nio.charset.CharsetDecoder) {
+    sun.nio.cs.StreamDecoder l0;
+    java.lang.Object l2;
+    java.nio.charset.CharsetDecoder l3;
+    java.nio.charset.Charset $stack4;
+    java.nio.channels.ReadableByteChannel $stack5;
+    java.nio.ByteBuffer $stack6, $stack8;
+    java.io.InputStream l1;
+    l0 := @this: sun.nio.cs.StreamDecoder;
+    l1 := @parameter0: java.io.InputStream;
+    l2 := @parameter1: java.lang.Object;
+    l3 := @parameter2: java.nio.charset.CharsetDecoder;
+    specialinvoke l0.<java.io.Reader: void <init>(java.lang.Object)>(l2);
+    $stack4 = virtualinvoke l3.<java.nio.charset.CharsetDecoder: java.nio.charset.Charset charset()>();
+    l0.<sun.nio.cs.StreamDecoder: java.nio.charset.Charset cs> = $stack4;
+    l0.<sun.nio.cs.StreamDecoder: java.nio.charset.CharsetDecoder decoder> = l3;
+    $stack5 = l0.<sun.nio.cs.StreamDecoder: java.nio.channels.ReadableByteChannel ch>;
+    if $stack5 != null goto label1;
+    l0.<sun.nio.cs.StreamDecoder: java.io.InputStream in> = l1;
+    l0.<sun.nio.cs.StreamDecoder: java.nio.channels.ReadableByteChannel ch> = null;
+    $stack8 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(8192);
+    l0.<sun.nio.cs.StreamDecoder: java.nio.ByteBuffer bb> = $stack8;
+ label1:
+    $stack6 = l0.<sun.nio.cs.StreamDecoder: java.nio.ByteBuffer bb>;
+    virtualinvoke $stack6.<java.nio.ByteBuffer: java.nio.Buffer flip()>();
+    return;
+}
+```
+19. <sun.nio.cs.StreamEncoder: sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream,java.lang.Object,java.lang.String)>  
+```
+public static sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.lang.String){
+    java.lang.String l2, l3;
+    sun.nio.cs.StreamEncoder $stack7;
+    java.io.OutputStream l0;
+    java.lang.Object l1;
+    java.nio.charset.Charset $stack8, $stack9;
+    l0 := @parameter0: java.io.OutputStream;
+    l1 := @parameter1: java.lang.Object;
+    l2 := @parameter2: java.lang.String;
+    l3 = l2;
+    if l3 != null goto label1;
+    $stack9 = staticinvoke <java.nio.charset.Charset: java.nio.charset.Charset defaultCharset()>();
+    l3 = virtualinvoke $stack9.<java.nio.charset.Charset: java.lang.String name()>();
+ label1:
+    $stack5 = staticinvoke <java.nio.charset.Charset: boolean isSupported(java.lang.String)>(l3);
+    if $stack5 == 0 goto label3;
+    $stack7 = new sun.nio.cs.StreamEncoder;
+    $stack8 = staticinvoke <java.nio.charset.Charset: java.nio.charset.Charset forName(java.lang.String)>(l3);
+    specialinvoke $stack7.<sun.nio.cs.StreamEncoder: void <init>(java.io.OutputStream,java.lang.Object,java.nio.charset.Charset)>(l0, l1, $stack8);
+ label2:
+    return $stack7;
+}
+private void <init>(java.io.OutputStream, java.lang.Object, java.nio.charset.Charset) {
+    sun.nio.cs.StreamEncoder l0;
+    java.io.OutputStream l1;
+    java.lang.Object l2;
+    java.nio.charset.Charset l3;
+    java.nio.charset.CharsetEncoder $stack4, $stack6, $stack8;
+    java.nio.charset.CodingErrorAction $stack5, $stack7;
+    l0 := @this: sun.nio.cs.StreamEncoder;
+    l1 := @parameter0: java.io.OutputStream;
+    l2 := @parameter1: java.lang.Object;
+    l3 := @parameter2: java.nio.charset.Charset;
+    $stack4 = virtualinvoke l3.<java.nio.charset.Charset: java.nio.charset.CharsetEncoder newEncoder()>();
+    $stack5 = <java.nio.charset.CodingErrorAction: java.nio.charset.CodingErrorAction REPLACE>;
+    $stack6 = virtualinvoke $stack4.<java.nio.charset.CharsetEncoder: java.nio.charset.CharsetEncoder onMalformedInput(java.nio.charset.CodingErrorAction)>($stack5);
+    $stack7 = <java.nio.charset.CodingErrorAction: java.nio.charset.CodingErrorAction REPLACE>;
+    $stack8 = virtualinvoke $stack6.<java.nio.charset.CharsetEncoder: java.nio.charset.CharsetEncoder onUnmappableCharacter(java.nio.charset.CodingErrorAction)>($stack7);
+    specialinvoke l0.<sun.nio.cs.StreamEncoder: void <init>(java.io.OutputStream,java.lang.Object,java.nio.charset.CharsetEncoder)>(l1, l2, $stack8);
+    return;
+}
+private void <init>(java.io.OutputStream, java.lang.Object, java.nio.charset.CharsetEncoder) {
+    sun.nio.cs.StreamEncoder l0;
+    java.lang.Object l2;
+    java.io.OutputStream l1;
+    java.nio.charset.CharsetEncoder l3;
+    java.nio.charset.Charset $stack4;
+    java.nio.channels.WritableByteChannel $stack5;
+    java.nio.ByteBuffer $stack6;
+    l0 := @this: sun.nio.cs.StreamEncoder;
+    l1 := @parameter0: java.io.OutputStream;
+    l2 := @parameter1: java.lang.Object;
+    l3 := @parameter2: java.nio.charset.CharsetEncoder;
+    specialinvoke l0.<java.io.Writer: void <init>(java.lang.Object)>(l2);
+    l0.<sun.nio.cs.StreamEncoder: boolean isOpen> = 1;
+    l0.<sun.nio.cs.StreamEncoder: boolean haveLeftoverChar> = 0;
+    l0.<sun.nio.cs.StreamEncoder: java.nio.CharBuffer lcb> = null;
+    l0.<sun.nio.cs.StreamEncoder: java.io.OutputStream out> = l1;
+    l0.<sun.nio.cs.StreamEncoder: java.nio.channels.WritableByteChannel ch> = null;
+    $stack4 = virtualinvoke l3.<java.nio.charset.CharsetEncoder: java.nio.charset.Charset charset()>();
+    l0.<sun.nio.cs.StreamEncoder: java.nio.charset.Charset cs> = $stack4;
+    l0.<sun.nio.cs.StreamEncoder: java.nio.charset.CharsetEncoder encoder> = l3;
+    $stack5 = l0.<sun.nio.cs.StreamEncoder: java.nio.channels.WritableByteChannel ch>;
+    if $stack5 != null goto label1;
+    $stack6 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(8192);
+    l0.<sun.nio.cs.StreamEncoder: java.nio.ByteBuffer bb> = $stack6;
+ label1:
+    return;
+}    
+```
+20. <java.beans.FeatureDescriptor: java.lang.ref.Reference createReference(java.lang.Object,boolean)>
+```
+    
+```    
