@@ -915,3 +915,46 @@ void <init>(java.lang.Object, java.lang.Object) {
     return;
 }
 ```    
+26. <java.util.jar.JarVerifier: java.security.cert.Certificate[] mapSignersToCertArray(java.security.CodeSigner[])>
+```
+private static java.security.cert.Certificate[] mapSignersToCertArray(java.security.CodeSigner[]) {
+    java.security.CodeSigner[] l0;
+    java.util.ArrayList $stack3, l1;
+    java.security.cert.Certificate[] $stack6, $stack8, $stack9;
+    java.lang.Object[] $stack7;
+    java.security.CodeSigner $stack10;
+    java.security.cert.CertPath $stack11;
+    java.util.List $stack12;
+    l0 := @parameter0: java.security.CodeSigner[];
+    $stack3 = new java.util.ArrayList;
+    specialinvoke $stack3.<java.util.ArrayList: void <init>()>();
+    l1 = $stack3;
+    $stack10 = l0[l2];
+    $stack11 = virtualinvoke $stack10.<java.security.CodeSigner: java.security.cert.CertPath getSignerCertPath()>();
+    $stack12 = virtualinvoke $stack11.<java.security.cert.CertPath: java.util.List getCertificates()>();
+    virtualinvoke l1.<java.util.ArrayList: boolean addAll(java.util.Collection)>($stack12);
+    $stack6 = newarray (java.security.cert.Certificate)[$stack5];
+    $stack7 = virtualinvoke l1.<java.util.ArrayList: java.lang.Object[] toArray(java.lang.Object[])>($stack6);
+    $stack8 = (java.security.cert.Certificate[]) $stack7;
+    $stack9 = (java.security.cert.Certificate[]) $stack8;
+    return $stack9;
+}
+public java.lang.Object[] toArray(java.lang.Object[]) {
+    java.lang.Object[] l1, $stack5, $stack10, $stack13, $stack14;
+    java.util.ArrayList l0;
+    java.lang.Class $stack12;
+    java.lang.Object nativeArrayCopy14;
+    l0 := @this: java.util.ArrayList;
+    l1 := @parameter0: java.lang.Object[];
+    $stack10 = l0.<java.util.ArrayList: java.lang.Object[] elementData>;
+    $stack12 = virtualinvoke l1.<java.lang.Object: java.lang.Class getClass()>();
+    $stack13 = staticinvoke <java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>($stack10, $stack11, $stack12);
+    $stack14 = (java.lang.Object[]) $stack13;
+    return $stack14;
+    $stack5 = l0.<java.util.ArrayList: java.lang.Object[] elementData>;
+    staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($stack5, 0, l1, 0, $stack4);
+    l1[0] = nativeArrayCopy14;
+    nativeArrayCopy14 = $stack5[0];
+    return l1;
+}
+```    
