@@ -1114,6 +1114,33 @@ private void parseLegacyPut(java.lang.String, java.lang.String) {
     $stack71 = l0.<java.security.Provider: java.util.Map legacyMap>;
     interfaceinvoke $stack71.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(l8, l9);
 }
+void <init>(java.security.Provider, java.security.Provider$1) {
+    java.security.Provider$Service l0;
+    java.security.Provider l1;
+    java.security.Provider$1 l2;
+
+    l0 := @this: java.security.Provider$Service;
+    l1 := @parameter0: java.security.Provider;
+    l2 := @parameter1: java.security.Provider$1;
+    specialinvoke l0.<java.security.Provider$Service: void <init>(java.security.Provider)>(l1);
+    return;
+}
+private void <init>(java.security.Provider) {
+    java.security.Provider$Service l0;
+    java.security.Provider l1;
+    java.util.List $stack2;
+    java.util.Map $stack3;
+
+    l0 := @this: java.security.Provider$Service;
+    l1 := @parameter0: java.security.Provider;
+    specialinvoke l0.<java.lang.Object: void <init>()>();
+    l0.<java.security.Provider$Service: java.security.Provider provider> = l1;
+    $stack2 = staticinvoke <java.util.Collections: java.util.List emptyList()>();
+    l0.<java.security.Provider$Service: java.util.List aliases> = $stack2;
+    $stack3 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>();
+    l0.<java.security.Provider$Service: java.util.Map attributes> = $stack3;
+    return;
+}
 ```    
 34. <org.apache.lucene.index.FieldInfos: void addInternal(java.lang.String,boolean,boolean,boolean,boolean,boolean)>
 I do not plan to consider this case. I think it maybe caused by null pointer references.    
