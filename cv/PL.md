@@ -958,3 +958,43 @@ public java.lang.Object[] toArray(java.lang.Object[]) {
     return l1;
 }
 ```    
+27. <org.dom4j.tree.AbstractBranch: java.util.List createContentList()>
+```
+protected java.util.List createContentList() {
+    java.util.ArrayList $stack1;
+    org.dom4j.tree.AbstractBranch this;
+    this := @this: org.dom4j.tree.AbstractBranch;
+    $stack1 = new java.util.ArrayList;
+    specialinvoke $stack1.<java.util.ArrayList: void <init>(int)>(5);
+    return $stack1;
+}
+protected void addNewNode(org.dom4j.Node) {
+    ...
+    list = virtualinvoke this.<org.dom4j.tree.AbstractBranch: java.util.List createContentList()>();
+    $stack7 = this.<org.dom4j.tree.DefaultElement: java.lang.Object content>;
+    interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>($stack7);
+    interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(node);
+    this.<org.dom4j.tree.DefaultElement: java.lang.Object content> = list;
+    virtualinvoke this.<org.dom4j.tree.AbstractElement: void childAdded(org.dom4j.Node)>(node);
+    return;
+}  
+protected java.util.List contentList() {
+    org.dom4j.tree.DefaultDocument this;
+    java.util.List $stack1, $stack3, $stack7, $stack2;
+    org.dom4j.Element $stack4, $stack6;
+
+    this := @this: org.dom4j.tree.DefaultDocument;
+    $stack1 = this.<org.dom4j.tree.DefaultDocument: java.util.List content>;
+    if $stack1 != null goto label1;
+    $stack3 = virtualinvoke this.<org.dom4j.tree.AbstractBranch: java.util.List createContentList()>();
+    this.<org.dom4j.tree.DefaultDocument: java.util.List content> = $stack3;
+    $stack4 = this.<org.dom4j.tree.DefaultDocument: org.dom4j.Element rootElement>;
+    if $stack4 == null goto label1;
+    $stack7 = this.<org.dom4j.tree.DefaultDocument: java.util.List content>;
+    $stack6 = this.<org.dom4j.tree.DefaultDocument: org.dom4j.Element rootElement>;
+    interfaceinvoke $stack7.<java.util.List: boolean add(java.lang.Object)>($stack6);
+ label1:
+    $stack2 = this.<org.dom4j.tree.DefaultDocument: java.util.List content>;
+    return $stack2;
+}    
+```    
