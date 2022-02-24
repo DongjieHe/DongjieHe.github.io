@@ -1011,3 +1011,24 @@ private void visitSuccessor(java.util.ArrayList, edu.umd.cs.findbugs.graph.Graph
     virtualinvoke stack.<java.util.ArrayList: boolean add(java.lang.Object)>($stack10);
 }
 ```    
+29. <edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: void visitAll()>
+```
+private void visitAll() {
+    this := @this: edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch;
+ label1:
+    searchTreeRoot = virtualinvoke this.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: edu.umd.cs.findbugs.graph.GraphVertex getNextSearchTreeRoot()>();
+ label2:
+    $stack6 = this.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: edu.umd.cs.findbugs.graph.SearchTreeCallback searchTreeCallback>;
+    $stack28 = this.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: edu.umd.cs.findbugs.graph.SearchTreeCallback searchTreeCallback>;
+    interfaceinvoke $stack28.<edu.umd.cs.findbugs.graph.SearchTreeCallback: void startSearchTree(edu.umd.cs.findbugs.graph.GraphVertex)>(searchTreeRoot);
+ label3:
+    $stack7 = new java.util.ArrayList;
+    $stack8 = this.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: edu.umd.cs.findbugs.graph.Graph graph>;
+    $stack9 = interfaceinvoke $stack8.<edu.umd.cs.findbugs.graph.Graph: int getNumVertexLabels()>();
+    specialinvoke $stack7.<java.util.ArrayList: void <init>(int)>($stack9);
+    stack = $stack7;
+    $stack10 = new edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch$Visit;
+    specialinvoke $stack10.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch$Visit: void <init>(edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch,edu.umd.cs.findbugs.graph.GraphVertex)>(this, searchTreeRoot);
+    virtualinvoke stack.<java.util.ArrayList: boolean add(java.lang.Object)>($stack10);
+}    
+```    
