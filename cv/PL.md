@@ -998,3 +998,16 @@ protected java.util.List contentList() {
     return $stack2;
 }    
 ```    
+28. <edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: void visitSuccessor(java.util.ArrayList,edu.umd.cs.findbugs.graph.GraphEdge)>
+```
+private void visitSuccessor(java.util.ArrayList, edu.umd.cs.findbugs.graph.GraphEdge) {
+    this := @this: edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch;
+    stack := @parameter0: java.util.ArrayList;
+    edge := @parameter1: edu.umd.cs.findbugs.graph.GraphEdge;
+    succ = virtualinvoke this.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch: edu.umd.cs.findbugs.graph.GraphVertex getTarget(edu.umd.cs.findbugs.graph.GraphEdge)>(edge);
+    ...
+    $stack10 = new edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch$Visit;
+    specialinvoke $stack10.<edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch$Visit: void <init>(edu.umd.cs.findbugs.graph.AbstractDepthFirstSearch,edu.umd.cs.findbugs.graph.GraphVertex)>(this, succ);
+    virtualinvoke stack.<java.util.ArrayList: boolean add(java.lang.Object)>($stack10);
+}
+```    
