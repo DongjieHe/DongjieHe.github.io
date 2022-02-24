@@ -1115,3 +1115,119 @@ private void parseLegacyPut(java.lang.String, java.lang.String) {
     interfaceinvoke $stack71.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(l8, l9);
 }
 ```    
+34. <org.apache.lucene.index.FieldInfos: void addInternal(java.lang.String,boolean,boolean,boolean,boolean,boolean)>
+I do not plan to consider this case. I think it maybe caused by null pointer references.    
+```
+private void addInternal(java.lang.String, boolean, boolean, boolean, boolean, boolean) {
+    org.apache.lucene.index.FieldInfo $stack8, fi;
+    java.lang.String name;
+    boolean isIndexed, storeTermVector, storePositionWithTermVector, storeOffsetWithTermVector, omitNorms;
+    org.apache.lucene.index.FieldInfos this;
+    java.util.ArrayList $stack9, $stack11;
+    int $stack10;
+    java.util.HashMap $stack13;
+
+    this := @this: org.apache.lucene.index.FieldInfos;
+    name := @parameter0: java.lang.String;
+    isIndexed := @parameter1: boolean;
+    storeTermVector := @parameter2: boolean;
+    storePositionWithTermVector := @parameter3: boolean;
+    storeOffsetWithTermVector := @parameter4: boolean;
+    omitNorms := @parameter5: boolean;
+    $stack8 = new org.apache.lucene.index.FieldInfo;
+    $stack9 = this.<org.apache.lucene.index.FieldInfos: java.util.ArrayList byNumber>;
+    $stack10 = virtualinvoke $stack9.<java.util.ArrayList: int size()>();
+    specialinvoke $stack8.<org.apache.lucene.index.FieldInfo: void <init>(java.lang.String,boolean,int,boolean,boolean,boolean,boolean)>(name, isIndexed, $stack10, storeTermVector, storePositionWithTermVector, storeOffsetWithTermVector, omitNorms);
+    fi = $stack8;
+    $stack11 = this.<org.apache.lucene.index.FieldInfos: java.util.ArrayList byNumber>;
+    virtualinvoke $stack11.<java.util.ArrayList: boolean add(java.lang.Object)>(fi);
+    $stack13 = this.<org.apache.lucene.index.FieldInfos: java.util.HashMap byName>;
+    virtualinvoke $stack13.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(name, fi);
+    return;
+}
+```
+35. <EDU.purdue.cs.bloat.tree.LocalExpr: java.lang.Object clone()>
+```
+public java.lang.Object clone() {
+    EDU.purdue.cs.bloat.tree.LocalExpr this, $stack1;
+    EDU.purdue.cs.bloat.editor.Type $stack2;
+    boolean $stack3;
+    int $stack4;
+    EDU.purdue.cs.bloat.tree.Expr $stack5;
+
+    this := @this: EDU.purdue.cs.bloat.tree.LocalExpr;
+    $stack1 = new EDU.purdue.cs.bloat.tree.LocalExpr;
+    $stack4 = this.<EDU.purdue.cs.bloat.tree.LocalExpr: int index>;
+    $stack3 = this.<EDU.purdue.cs.bloat.tree.LocalExpr: boolean fromStack>;
+    $stack2 = this.<EDU.purdue.cs.bloat.tree.LocalExpr: EDU.purdue.cs.bloat.editor.Type type>;
+    specialinvoke $stack1.<EDU.purdue.cs.bloat.tree.LocalExpr: void <init>(int,boolean,EDU.purdue.cs.bloat.editor.Type)>($stack4, $stack3, $stack2);
+    $stack5 = virtualinvoke this.<EDU.purdue.cs.bloat.tree.LocalExpr: EDU.purdue.cs.bloat.tree.Expr copyInto(EDU.purdue.cs.bloat.tree.Expr)>($stack1);
+    return $stack5;
+}
+public void <init>(int, boolean, EDU.purdue.cs.bloat.editor.Type) {
+    EDU.purdue.cs.bloat.tree.LocalExpr this;
+    int index;
+    EDU.purdue.cs.bloat.editor.Type type;
+    boolean fromStack;
+
+    this := @this: EDU.purdue.cs.bloat.tree.LocalExpr;
+    index := @parameter0: int;
+    fromStack := @parameter1: boolean;
+    type := @parameter2: EDU.purdue.cs.bloat.editor.Type;
+    specialinvoke this.<EDU.purdue.cs.bloat.tree.VarExpr: void <init>(int,EDU.purdue.cs.bloat.editor.Type)>(index, type);
+    this.<EDU.purdue.cs.bloat.tree.LocalExpr: boolean fromStack> = fromStack;
+    return;
+}
+public void <init>(int, EDU.purdue.cs.bloat.editor.Type) {
+    EDU.purdue.cs.bloat.tree.VarExpr this;
+    EDU.purdue.cs.bloat.editor.Type type;
+    int index;
+    this := @this: EDU.purdue.cs.bloat.tree.VarExpr;
+    index := @parameter0: int;
+    type := @parameter1: EDU.purdue.cs.bloat.editor.Type;
+    specialinvoke this.<EDU.purdue.cs.bloat.tree.MemExpr: void <init>(EDU.purdue.cs.bloat.editor.Type)>(type);
+    this.<EDU.purdue.cs.bloat.tree.VarExpr: int index> = index;
+    return;
+}
+public void <init>(EDU.purdue.cs.bloat.editor.Type) {
+    EDU.purdue.cs.bloat.tree.MemExpr this;
+    EDU.purdue.cs.bloat.editor.Type type;
+    this := @this: EDU.purdue.cs.bloat.tree.MemExpr;
+    type := @parameter0: EDU.purdue.cs.bloat.editor.Type;
+    specialinvoke this.<EDU.purdue.cs.bloat.tree.DefExpr: void <init>(EDU.purdue.cs.bloat.editor.Type)>(type);
+    return;
+}
+public void <init>(EDU.purdue.cs.bloat.editor.Type) {
+    EDU.purdue.cs.bloat.tree.DefExpr this;
+    EDU.purdue.cs.bloat.editor.Type type;
+    java.util.HashSet $stack2;
+    int $stack3, $stack4;
+
+    this := @this: EDU.purdue.cs.bloat.tree.DefExpr;
+    type := @parameter0: EDU.purdue.cs.bloat.editor.Type;
+    specialinvoke this.<EDU.purdue.cs.bloat.tree.Expr: void <init>(EDU.purdue.cs.bloat.editor.Type)>(type);
+    $stack2 = new java.util.HashSet;
+    specialinvoke $stack2.<java.util.HashSet: void <init>()>();
+    this.<EDU.purdue.cs.bloat.tree.DefExpr: java.util.Set uses> = $stack2;
+    $stack3 = <EDU.purdue.cs.bloat.tree.DefExpr: int next>;
+    $stack4 = $stack3 + 1;
+    <EDU.purdue.cs.bloat.tree.DefExpr: int next> = $stack4;
+    this.<EDU.purdue.cs.bloat.tree.DefExpr: int version> = $stack3;
+    return;
+}
+public void <init>(EDU.purdue.cs.bloat.editor.Type) {
+    EDU.purdue.cs.bloat.tree.Expr this;
+    EDU.purdue.cs.bloat.tree.Expr$ExprComparator $stack2;
+    EDU.purdue.cs.bloat.editor.Type type;
+
+    this := @this: EDU.purdue.cs.bloat.tree.Expr;
+    type := @parameter0: EDU.purdue.cs.bloat.editor.Type;
+    specialinvoke this.<EDU.purdue.cs.bloat.tree.Node: void <init>()>();
+    this.<EDU.purdue.cs.bloat.tree.Expr: EDU.purdue.cs.bloat.tree.DefExpr def> = null;
+    $stack2 = new EDU.purdue.cs.bloat.tree.Expr$ExprComparator;
+    specialinvoke $stack2.<EDU.purdue.cs.bloat.tree.Expr$ExprComparator: void <init>(EDU.purdue.cs.bloat.tree.Expr,EDU.purdue.cs.bloat.tree.Expr$1)>(this, null);
+    this.<EDU.purdue.cs.bloat.tree.Expr: java.lang.Object comparator> = $stack2;
+    this.<EDU.purdue.cs.bloat.tree.Expr: EDU.purdue.cs.bloat.editor.Type type> = type;
+    return;
+}
+```    
