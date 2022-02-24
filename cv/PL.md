@@ -1032,3 +1032,28 @@ private void visitAll() {
     virtualinvoke stack.<java.util.ArrayList: boolean add(java.lang.Object)>($stack10);
 }    
 ```    
+30. <edu.umd.cs.findbugs.graph.AbstractGraph: java.util.Iterator incomingEdgeIterator(edu.umd.cs.findbugs.graph.AbstractVertex)>
+```
+public java.util.Iterator incomingEdgeIterator(edu.umd.cs.findbugs.graph.AbstractVertex) {
+    edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator $stack2;
+    edu.umd.cs.findbugs.graph.AbstractVertex target;
+    edu.umd.cs.findbugs.graph.AbstractGraph this;
+
+    this := @this: edu.umd.cs.findbugs.graph.AbstractGraph;
+    target := @parameter0: edu.umd.cs.findbugs.graph.AbstractVertex;
+    $stack2 = new edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator;
+    specialinvoke $stack2.<edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator: void <init>(edu.umd.cs.findbugs.graph.AbstractVertex)>(target);
+    return $stack2;
+}
+public void <init>(edu.umd.cs.findbugs.graph.AbstractVertex) {
+    edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator this;
+    edu.umd.cs.findbugs.graph.AbstractVertex target;
+    edu.umd.cs.findbugs.graph.AbstractEdge $stack2;
+
+    this := @this: edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator;
+    target := @parameter0: edu.umd.cs.findbugs.graph.AbstractVertex;
+    specialinvoke this.<java.lang.Object: void <init>()>();
+    $stack2 = virtualinvoke target.<edu.umd.cs.findbugs.graph.AbstractVertex: edu.umd.cs.findbugs.graph.AbstractEdge getFirstIncomingEdge()>();
+    this.<edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator: edu.umd.cs.findbugs.graph.AbstractEdge edge> = $stack2;
+}
+```    
