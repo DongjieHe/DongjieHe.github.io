@@ -1057,3 +1057,61 @@ public void <init>(edu.umd.cs.findbugs.graph.AbstractVertex) {
     this.<edu.umd.cs.findbugs.graph.AbstractGraph$IncomingEdgeIterator: edu.umd.cs.findbugs.graph.AbstractEdge edge> = $stack2;
 }
 ```    
+31. <edu.umd.cs.findbugs.ba.ClassContext$AnalysisFactory: java.lang.Object getAnalysis(org.apache.bcel.classfile.Method)>
+This is a bit complex.    
+```
+public java.lang.Object getAnalysis(org.apache.bcel.classfile.Method) {
+    this := @this: edu.umd.cs.findbugs.ba.ClassContext$AnalysisFactory;
+    method := @parameter0: org.apache.bcel.classfile.Method;
+    $stack8 = this.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisFactory: java.util.HashMap map>;
+    $stack13 = new edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult;
+    specialinvoke $stack13.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult: void <init>(edu.umd.cs.findbugs.ba.ClassContext$1)>(null);
+    result = $stack13;
+    analysis = virtualinvoke this.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisFactory: java.lang.Object analyze(org.apache.bcel.classfile.Method)>(method);
+    virtualinvoke result.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult: void setAnalysis(java.lang.Object)>(analysis);
+    virtualinvoke result.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult: void setCFGBuilderException(edu.umd.cs.findbugs.ba.CFGBuilderException)>(e);
+    virtualinvoke result.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult: void setDataflowAnalysisException(edu.umd.cs.findbugs.ba.DataflowAnalysisException)>(e#3);
+    virtualinvoke result.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult: void setAnalysisException(edu.umd.cs.findbugs.ba.AnalysisException)>(e#4);
+    $stack16 = this.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisFactory: java.util.HashMap map>;
+    virtualinvoke $stack16.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(method, result);
+    $stack10 = virtualinvoke result.<edu.umd.cs.findbugs.ba.ClassContext$AnalysisResult: java.lang.Object getAnalysis()>();
+    return $stack10;
+}
+```
+32. <java.util.concurrent.ConcurrentHashMap$Segment: void rehash()>
+```
+void rehash() {
+    java.util.concurrent.ConcurrentHashMap$Segment l0;
+    java.util.concurrent.ConcurrentHashMap$HashEntry[] l1, l3;
+    int l2, $stack14, $stack16, $stack20, $stack21, l4, $stack24, l8, $stack25, $stack28, $stack32, l5, l10, l12;
+    float $stack17, $stack18, $stack19;
+    java.util.concurrent.ConcurrentHashMap$HashEntry l6, l7, l13, $stack26, l9, l11;
+    java.lang.Object $stack27, $stack29;
+    l0 := @this: java.util.concurrent.ConcurrentHashMap$Segment;
+    l1 = l0.<java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$HashEntry[] table>;
+    l6 = l1[l5];
+    l7 = l6.<java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry next>;
+    l11 = l7;
+    l9 = l11;
+    l11 = l11.<java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry next>;
+    l3[l10] = l9;
+    $stack26 = new java.util.concurrent.ConcurrentHashMap$HashEntry;
+    $stack29 = l11.<java.util.concurrent.ConcurrentHashMap$HashEntry: java.lang.Object key>;
+    specialinvoke $stack26.<java.util.concurrent.ConcurrentHashMap$HashEntry: void <init>(java.lang.Object,int,java.util.concurrent.ConcurrentHashMap$HashEntry,java.lang.Object)>($stack29, $stack28, l13, $stack27);
+    l3[l12] = $stack26;
+    l0.<java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$HashEntry[] table> = l3;
+    return;
+}
+```   
+33. <java.security.Provider: void parseLegacyPut(java.lang.String,java.lang.String)>
+```
+private void parseLegacyPut(java.lang.String, java.lang.String) {
+    ...
+    l0 := @this: java.security.Provider;
+    $stack68 = new java.security.Provider$Service;
+    specialinvoke $stack68.<java.security.Provider$Service: void <init>(java.security.Provider,java.security.Provider$1)>(l0, null);
+    l9 = $stack68;
+    $stack71 = l0.<java.security.Provider: java.util.Map legacyMap>;
+    interfaceinvoke $stack71.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(l8, l9);
+}
+```    
