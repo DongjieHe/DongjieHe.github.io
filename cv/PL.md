@@ -862,6 +862,16 @@ void <init>(java.lang.Object[], int, int) {
 ```
 25. <com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry newLinkedEntry(java.lang.Object,java.lang.Object,com.google.common.collect.RegularImmutableMap$LinkedEntry)>
 ```
+transient void <init>(java.util.Map$Entry[]) {
+    this := @this: com.google.common.collect.RegularImmutableMap;
+    ...
+    linkedEntry = staticinvoke <com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry newLinkedEntry(java.lang.Object,java.lang.Object,com.google.common.collect.RegularImmutableMap$LinkedEntry)>(key, $stack20, existing);
+    $stack22 = this.<com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry[] table>;
+    $stack22[tableIndex] = linkedEntry;
+    $stack23 = this.<com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry[] entries>;
+    $stack23[entryIndex] = linkedEntry;
+    ...
+}
 private static com.google.common.collect.RegularImmutableMap$LinkedEntry newLinkedEntry(java.lang.Object, java.lang.Object, com.google.common.collect.RegularImmutableMap$LinkedEntry) {
     com.google.common.collect.RegularImmutableMap$LinkedEntry next, $stack3;
     java.lang.Object key, value;
@@ -914,7 +924,7 @@ void <init>(java.lang.Object, java.lang.Object) {
     specialinvoke this.<com.google.common.collect.ImmutableEntry: void <init>(java.lang.Object,java.lang.Object)>(key, value);
     return;
 }
-```    
+```
 26. <java.util.jar.JarVerifier: java.security.cert.Certificate[] mapSignersToCertArray(java.security.CodeSigner[])>
 ```
 private static java.security.cert.Certificate[] mapSignersToCertArray(java.security.CodeSigner[]) {
@@ -1118,7 +1128,6 @@ void <init>(java.security.Provider, java.security.Provider$1) {
     java.security.Provider$Service l0;
     java.security.Provider l1;
     java.security.Provider$1 l2;
-
     l0 := @this: java.security.Provider$Service;
     l1 := @parameter0: java.security.Provider;
     l2 := @parameter1: java.security.Provider$1;
