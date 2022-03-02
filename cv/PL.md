@@ -1293,3 +1293,35 @@ public void <init>(int, float, int) {
     $stack18[l8] = $stack17;
 }        
 ```
+37. <java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>
+```
+static final java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int) {
+    int l0;
+    java.util.concurrent.ConcurrentHashMap$HashEntry[] $stack1;
+    l0 := @parameter0: int;
+    $stack1 = newarray (java.util.concurrent.ConcurrentHashMap$HashEntry)[l0];
+    return $stack1;
+}
+void <init>(int, float) {
+    java.util.concurrent.ConcurrentHashMap$Segment l0;
+    float l2;
+    int l1;
+    java.util.concurrent.ConcurrentHashMap$HashEntry[] $stack3;
+    l0 := @this: java.util.concurrent.ConcurrentHashMap$Segment;
+    l1 := @parameter0: int;
+    l2 := @parameter1: float;
+    specialinvoke l0.<java.util.concurrent.locks.ReentrantLock: void <init>()>();
+    l0.<java.util.concurrent.ConcurrentHashMap$Segment: float loadFactor> = l2;
+    $stack3 = staticinvoke <java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>(l1);
+    virtualinvoke l0.<java.util.concurrent.ConcurrentHashMap$Segment: void setTable(java.util.concurrent.ConcurrentHashMap$HashEntry[])>($stack3);
+    return;
+}
+void rehash() {
+    java.util.concurrent.ConcurrentHashMap$Segment l0;
+    java.util.concurrent.ConcurrentHashMap$HashEntry[] l1, l3;
+    l0 := @this: java.util.concurrent.ConcurrentHashMap$Segment;    
+    l3 = staticinvoke <java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>($stack14);
+    l0.<java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$HashEntry[] table> = l3;
+}
+```
+        
