@@ -1267,3 +1267,29 @@ public void <init>(EDU.purdue.cs.bloat.editor.Type) {
     return;
 }
 ```    
+36. <java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>
+```
+static final java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int) {
+    int l0;
+    java.util.concurrent.ConcurrentHashMap$Segment[] $stack1;
+    l0 := @parameter0: int;
+    $stack1 = newarray (java.util.concurrent.ConcurrentHashMap$Segment)[l0];
+    return $stack1;
+}
+public void <init>(int, float, int) {
+    java.util.concurrent.ConcurrentHashMap l0;
+    java.util.concurrent.ConcurrentHashMap$Segment[] $stack13, $stack15, $stack18;
+    java.util.concurrent.ConcurrentHashMap$Segment $stack17;
+    l0 := @this: java.util.concurrent.ConcurrentHashMap;
+    specialinvoke l0.<java.util.AbstractMap: void <init>()>();
+    $stack13 = staticinvoke <java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>(l5);
+    l0.<java.util.concurrent.ConcurrentHashMap: java.util.concurrent.ConcurrentHashMap$Segment[] segments> = $stack13;
+    $stack15 = l0.<java.util.concurrent.ConcurrentHashMap: java.util.concurrent.ConcurrentHashMap$Segment[] segments>;
+    $stack16 = lengthof $stack15;
+    if l8 >= $stack16 goto label11;
+    $stack18 = l0.<java.util.concurrent.ConcurrentHashMap: java.util.concurrent.ConcurrentHashMap$Segment[] segments>;
+    $stack17 = new java.util.concurrent.ConcurrentHashMap$Segment;
+    specialinvoke $stack17.<java.util.concurrent.ConcurrentHashMap$Segment: void <init>(int,float)>(l7, l2);
+    $stack18[l8] = $stack17;
+}        
+```
