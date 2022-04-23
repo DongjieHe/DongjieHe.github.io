@@ -16,3 +16,11 @@ super:<init> {
   init(this.ht);
 }
 ```
+# avrora.sim.mcu.Timer16Bit:installTikcers
+```java
+void installTickers() {
+  this.tickers[0] = new Mode_Normal();
+  ...
+  this.tickers[15] = new Mode_FastPWM(...);
+}
+```
