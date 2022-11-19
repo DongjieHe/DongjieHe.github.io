@@ -21,6 +21,9 @@
 <java.io.DataInputStream: java.lang.String readLine()>
 <java.lang.ThreadLocal$ThreadLocalMap: void set(java.lang.ThreadLocal,java.lang.Object)>
 <java.lang.ThreadLocal$ThreadLocalMap: void replaceStaleEntry(java.lang.ThreadLocal,java.lang.Object,int)>
+<java.net.InetSocketAddress: void <init>(java.net.InetAddress,int)>
+<java.text.AttributedString: int ensureRunBreak(int,boolean)>
+<java.text.AttributedString: void createRunAttributeDataVectors()>
 ```
 ## Pattern 2 (params)
 ```
@@ -45,6 +48,8 @@
 <EDU.purdue.cs.bloat.tree.Expr: void <init>(EDU.purdue.cs.bloat.editor.Type)>
 <EDU.purdue.cs.bloat.tree.PrintVisitor: void <init>(java.io.Writer)>
 <java.awt.geom.Rectangle2D: java.awt.geom.PathIterator getPathIterator(java.awt.geom.AffineTransform)>
+<java.text.AttributedString: java.text.AttributedCharacterIterator getIterator(java.text.AttributedCharacterIterator$Attribute[],int,int)>
+<java.util.AbstractList: java.util.Iterator iterator()>
 ```
 ## Pattern 3 (delegate)
 ```
@@ -77,6 +82,7 @@
 <com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet of(java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable[])>
 <java.beans.PropertyChangeSupport: void firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)>
 <java.lang.Thread$1: java.lang.Object run()>
+<java.util.AbstractCollection: java.lang.Object[] toArray()>
 ```
 ### Pattern 6 (k-obj static)
 ```
@@ -85,12 +91,8 @@
 # TO CHECK
 ```
 
-<java.net.InetSocketAddress: void <init>(java.net.InetAddress,int)>
-<java.text.AttributedString: int ensureRunBreak(int,boolean)>
-<java.text.AttributedString: java.text.AttributedCharacterIterator getIterator(java.text.AttributedCharacterIterator$Attribute[],int,int)>
-<java.text.AttributedString: void createRunAttributeDataVectors()>
-<java.util.AbstractCollection: java.lang.Object[] toArray()>
-<java.util.AbstractList: java.util.Iterator iterator()>
+
+
 <java.util.AbstractList: java.util.List subList(int,int)>
 <java.util.AbstractList: java.util.ListIterator listIterator(int)>
 <java.util.AbstractMap$2: java.util.Iterator iterator()>
