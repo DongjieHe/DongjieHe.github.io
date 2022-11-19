@@ -5,10 +5,22 @@
 <antlr.collections.impl.Vector: void ensureCapacity(int)>
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>()>
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>(int)>
+<com.sun.org.apache.xerces.internal.util.SymbolTable: void <init>(int)>
+<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>
+<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>
+<java.lang.ThreadLocal$ThreadLocalMap: void resize()>
 ```
 ## pattern 1-1 (k-obj) 
 ```
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
+<EDU.purdue.cs.bloat.tree.LocalExpr: java.lang.Object clone()>
+<edu.umd.cs.findbugs.ba.SourceFinder$ZipSourceRepository: edu.umd.cs.findbugs.ba.SourceFileDataSource getDataSource(java.lang.String)>
+<edu.umd.cs.findbugs.graph.AbstractGraph: java.util.Iterator outgoingEdgeIterator(edu.umd.cs.findbugs.graph.AbstractVertex)>
+<edu.umd.cs.findbugs.SortedBugCollection: void <init>(edu.umd.cs.findbugs.ProjectStats,java.util.Comparator)>
+<java.awt.Window: void init(java.awt.GraphicsConfiguration)>
+<java.io.DataInputStream: java.lang.String readLine()>
+<java.lang.ThreadLocal$ThreadLocalMap: void set(java.lang.ThreadLocal,java.lang.Object)>
+<java.lang.ThreadLocal$ThreadLocalMap: void replaceStaleEntry(java.lang.ThreadLocal,java.lang.Object,int)>
 ```
 ## Pattern 2 (params)
 ```
@@ -30,6 +42,9 @@
 <com.google.common.collect.RegularImmutableMap: com.google.common.collect.ImmutableSet createEntrySet()>
 <com.google.common.collect.Sets: java.util.HashSet newHashSet(java.lang.Iterable)>
 <com.google.common.collect.Sets: java.util.LinkedHashSet newLinkedHashSet(java.lang.Iterable)>
+<EDU.purdue.cs.bloat.tree.Expr: void <init>(EDU.purdue.cs.bloat.editor.Type)>
+<EDU.purdue.cs.bloat.tree.PrintVisitor: void <init>(java.io.Writer)>
+<java.awt.geom.Rectangle2D: java.awt.geom.PathIterator getPathIterator(java.awt.geom.AffineTransform)>
 ```
 ## Pattern 3 (delegate)
 ```
@@ -55,10 +70,13 @@
 <com.google.common.collect.Sets: java.util.HashSet newHashSetWithExpectedSize(int)>
 <com.google.common.collect.Sets: java.util.LinkedHashSet newLinkedHashSet()>
 <com.google.common.collect.Sets: java.util.TreeSet newTreeSet()>
+<java.beans.FeatureDescriptor: java.lang.ref.Reference createReference(java.lang.Object,boolean)>
 ```
 ### Pattern 5 (hard) 
 ```
 <com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet of(java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable[])>
+<java.beans.PropertyChangeSupport: void firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)>
+<java.lang.Thread$1: java.lang.Object run()>
 ```
 ### Pattern 6 (k-obj static)
 ```
@@ -66,24 +84,7 @@
 ```
 # TO CHECK
 ```
-<com.sun.org.apache.xerces.internal.util.SymbolTable: void <init>(int)>
-<EDU.purdue.cs.bloat.tree.Expr: void <init>(EDU.purdue.cs.bloat.editor.Type)>
-<EDU.purdue.cs.bloat.tree.LocalExpr: java.lang.Object clone()>
-<EDU.purdue.cs.bloat.tree.PrintVisitor: void <init>(java.io.Writer)>
-<edu.umd.cs.findbugs.ba.SourceFinder$ZipSourceRepository: edu.umd.cs.findbugs.ba.SourceFileDataSource getDataSource(java.lang.String)>
-<edu.umd.cs.findbugs.graph.AbstractGraph: java.util.Iterator outgoingEdgeIterator(edu.umd.cs.findbugs.graph.AbstractVertex)>
-<edu.umd.cs.findbugs.SortedBugCollection: void <init>(edu.umd.cs.findbugs.ProjectStats,java.util.Comparator)>
-<java.awt.geom.Rectangle2D: java.awt.geom.PathIterator getPathIterator(java.awt.geom.AffineTransform)>
-<java.awt.Window: void init(java.awt.GraphicsConfiguration)>
-<java.beans.FeatureDescriptor: java.lang.ref.Reference createReference(java.lang.Object,boolean)>
-<java.beans.PropertyChangeSupport: void firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)>
-<java.io.DataInputStream: java.lang.String readLine()>
-<java.lang.Thread$1: java.lang.Object run()>
-<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>
-<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>
-<java.lang.ThreadLocal$ThreadLocalMap: void replaceStaleEntry(java.lang.ThreadLocal,java.lang.Object,int)>
-<java.lang.ThreadLocal$ThreadLocalMap: void resize()>
-<java.lang.ThreadLocal$ThreadLocalMap: void set(java.lang.ThreadLocal,java.lang.Object)>
+
 <java.net.InetSocketAddress: void <init>(java.net.InetAddress,int)>
 <java.text.AttributedString: int ensureRunBreak(int,boolean)>
 <java.text.AttributedString: java.text.AttributedCharacterIterator getIterator(java.text.AttributedCharacterIterator$Attribute[],int,int)>
