@@ -10,6 +10,20 @@
 <antlr.collections.impl.Vector: java.lang.Object clone()>
 <com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection: java.util.Iterator iterator()>
 <com.google.common.collect.ImmutableEnumMap$2: com.google.common.collect.UnmodifiableIterator iterator()>
+<com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableSet createEntrySet()>
+<com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList construct(java.lang.Object[])>
+<com.google.common.collect.ImmutableList: com.google.common.collect.UnmodifiableListIterator listIterator(int)>
+<com.google.common.collect.ImmutableMap$Builder: com.google.common.collect.ImmutableMap fromEntryList(java.util.List)>
+<com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap copyOf(java.util.Map)>
+<com.google.common.collect.ImmutableSet: com.google.common.collect.ImmutableSet of(java.lang.Object)>
+<com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet construct(java.util.Comparator,int,java.lang.Object[])>
+<com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet emptySet(java.util.Comparator)>
+<com.google.common.collect.Iterators: com.google.common.collect.UnmodifiableIterator singletonIterator(java.lang.Object)>
+<com.google.common.collect.Iterators: com.google.common.collect.UnmodifiableListIterator forArray(java.lang.Object[],int,int,int)>
+<com.google.common.collect.Maps: java.util.HashMap newHashMap(java.util.Map)> % hard
+<com.google.common.collect.RegularImmutableMap: com.google.common.collect.ImmutableSet createEntrySet()>
+<com.google.common.collect.Sets: java.util.HashSet newHashSet(java.lang.Iterable)>
+<com.google.common.collect.Sets: java.util.LinkedHashSet newLinkedHashSet(java.lang.Iterable)>
 ```
 ## Pattern 3 (delegate)
 ```
@@ -17,44 +31,35 @@
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.List wrapList(java.lang.Object,java.util.List,com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection)>
 <com.google.common.collect.HashMultimap: void <init>()>
 <com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableMap asImmutable(java.util.EnumMap)>
+<com.google.common.collect.RegularImmutableMap$EntrySet: com.google.common.collect.ImmutableList createAsList()>
 ```
 ### Pattern 4 (callsite)
 ```
 <com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>
 <com.google.common.collect.ImmutableBiMap: com.google.common.collect.ImmutableBiMap of(java.lang.Object,java.lang.Object)>
-```
-
-# TO CHECK
-```
-<com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableSet createEntrySet()>
 <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[])>
-<com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList construct(java.lang.Object[])>
-<com.google.common.collect.ImmutableList: com.google.common.collect.UnmodifiableListIterator listIterator(int)>
-<com.google.common.collect.ImmutableMap$Builder: com.google.common.collect.ImmutableMap fromEntryList(java.util.List)>
-<com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap copyOf(java.util.Map)>
 <com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap$Builder builder()>
-<com.google.common.collect.ImmutableSet: com.google.common.collect.ImmutableSet of(java.lang.Object)>
-<com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet construct(java.util.Comparator,int,java.lang.Object[])>
-<com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet emptySet(java.util.Comparator)>
-<com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet of(java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable[])>
-<com.google.common.collect.Iterators: com.google.common.collect.UnmodifiableIterator singletonIterator(java.lang.Object)>
-<com.google.common.collect.Iterators: com.google.common.collect.UnmodifiableListIterator forArray(java.lang.Object[],int,int,int)>
 <com.google.common.collect.Lists: java.util.ArrayList newArrayList()>
 <com.google.common.collect.Lists: java.util.LinkedList newLinkedList()>
 <com.google.common.collect.Maps: java.util.HashMap newHashMap()>
-<com.google.common.collect.Maps: java.util.HashMap newHashMap(java.util.Map)>
-<com.google.common.collect.Maps: java.util.Map$Entry immutableEntry(java.lang.Object,java.lang.Object)>
 <com.google.common.collect.Maps: java.util.TreeMap newTreeMap()>
-<com.google.common.collect.RegularImmutableMap$EntrySet: com.google.common.collect.ImmutableList createAsList()>
-<com.google.common.collect.RegularImmutableMap: com.google.common.collect.ImmutableSet createEntrySet()>
 <com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry newLinkedEntry(java.lang.Object,java.lang.Object,com.google.common.collect.RegularImmutableMap$LinkedEntry)>
 <com.google.common.collect.RegularImmutableMap: com.google.common.collect.RegularImmutableMap$LinkedEntry[] createEntryArray(int)>
 <com.google.common.collect.Sets: java.util.HashSet newHashSet()>
-<com.google.common.collect.Sets: java.util.HashSet newHashSet(java.lang.Iterable)>
 <com.google.common.collect.Sets: java.util.HashSet newHashSetWithExpectedSize(int)>
 <com.google.common.collect.Sets: java.util.LinkedHashSet newLinkedHashSet()>
-<com.google.common.collect.Sets: java.util.LinkedHashSet newLinkedHashSet(java.lang.Iterable)>
 <com.google.common.collect.Sets: java.util.TreeSet newTreeSet()>
+```
+### Pattern 5 (hard) 
+```
+<com.google.common.collect.ImmutableSortedSet: com.google.common.collect.ImmutableSortedSet of(java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable,java.lang.Comparable[])>
+```
+### Pattern 6 (k-obj static)
+```
+<com.google.common.collect.Maps: java.util.Map$Entry immutableEntry(java.lang.Object,java.lang.Object)>
+```
+# TO CHECK
+```
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>()>
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>(int)>
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
