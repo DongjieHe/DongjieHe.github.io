@@ -10,11 +10,18 @@
 <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>
 <java.lang.ThreadLocal$ThreadLocalMap: void resize()>
 <java.util.ArrayList: void <init>(int)>
+<java.util.HashMap: void <init>()>
+<java.util.HashMap: void <init>(int,float)>
+<java.util.HashMap: void resize(int)>
+<java.util.Hashtable: void <init>(int,float)>
+<java.util.IdentityHashMap: void init(int)>
+<java.util.Vector: void <init>(int,int)>
 ```
 ## pattern 1-1 (k-obj) 
 ```
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
 <EDU.purdue.cs.bloat.tree.LocalExpr: java.lang.Object clone()>
+<java.util.HashMap: java.lang.Object clone()>
 <edu.umd.cs.findbugs.ba.SourceFinder$ZipSourceRepository: edu.umd.cs.findbugs.ba.SourceFileDataSource getDataSource(java.lang.String)>
 <edu.umd.cs.findbugs.graph.AbstractGraph: java.util.Iterator outgoingEdgeIterator(edu.umd.cs.findbugs.graph.AbstractVertex)>
 <edu.umd.cs.findbugs.SortedBugCollection: void <init>(edu.umd.cs.findbugs.ProjectStats,java.util.Comparator)>
@@ -31,11 +38,50 @@
 <java.util.Collections$UnmodifiableMap: java.util.Set entrySet()>
 <java.util.concurrent.ConcurrentHashMap$Segment: java.lang.Object put(java.lang.Object,int,java.lang.Object,boolean)>
 <java.util.concurrent.ConcurrentHashMap$Segment: java.lang.Object remove(java.lang.Object,int,java.lang.Object)>
+<java.util.concurrent.ConcurrentHashMap$Segment: void rehash()>
+<java.util.concurrent.ConcurrentHashMap: java.util.Collection values()>
+<java.util.concurrent.ConcurrentHashMap: java.util.Set entrySet()>
+<java.util.concurrent.ConcurrentHashMap: java.util.Set keySet()>
+<java.util.concurrent.ConcurrentHashMap: void <init>(int,float,int)>
+<java.util.concurrent.ConcurrentLinkedQueue: void <init>()>
+<java.util.concurrent.LinkedBlockingQueue: void <init>(int)>
+<java.util.concurrent.LinkedBlockingQueue: void enqueue(java.lang.Object)>
+<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory,java.util.concurrent.RejectedExecutionHandler)>
+<java.util.HashMap: java.util.Collection values()>
+<java.util.HashMap: java.util.Set keySet()>
+<java.util.HashMap: java.util.Set entrySet0()>
+<java.util.HashMap: void addEntry(int,java.lang.Object,java.lang.Object,int)>
+<java.util.HashMap: void createEntry(int,java.lang.Object,java.lang.Object,int)>
+<java.util.HashSet: void <init>()>
+<java.util.HashSet: void <init>(int)>
+<java.util.HashSet: void <init>(int,float)>
+<java.util.HashSet: void <init>(int,float,boolean)>
+<java.util.HashSet: void <init>(java.util.Collection)>
+<java.util.Hashtable: java.lang.Object put(java.lang.Object,java.lang.Object)>
+<java.util.Hashtable: void rehash()>
+<java.util.IdentityHashMap: java.util.Collection values()>
+<java.util.IdentityHashMap: java.util.Set entrySet()>
+<java.util.IdentityHashMap: java.util.Set keySet()>
+<java.util.IdentityHashMap: void resize(int)>
+<java.util.LinkedHashMap: void createEntry(int,java.lang.Object,java.lang.Object,int)>
+<java.util.LinkedHashMap: void init()>
+<java.util.LinkedList: boolean addAll(int,java.util.Collection)>
+<java.util.LinkedList: void <init>()>
+<java.util.ListResourceBundle: void loadLookup()>
+<java.util.ServiceLoader: java.util.Iterator iterator()>
+<java.util.TreeMap: java.lang.Object put(java.lang.Object,java.lang.Object)>
+<java.util.TreeMap: java.util.Collection values()>
+<java.util.TreeMap: java.util.NavigableSet navigableKeySet()>
+<java.util.TreeMap: java.util.Set entrySet()>
+<java.util.TreeMap: java.util.TreeMap$Entry buildFromSorted(int,int,int,int,java.util.Iterator,java.io.ObjectInputStream,java.lang.Object)>
+<java.util.TreeSet: void <init>()>
+<java.util.TreeSet: void <init>(java.util.Comparator)>
 ```
 ## Pattern 2 (params)
 ```
 <antlr.collections.impl.Vector: java.util.Enumeration elements()>
 <antlr.collections.impl.Vector: java.lang.Object clone()>
+<java.util.Hashtable: java.lang.Object clone()>
 <com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection: java.util.Iterator iterator()>
 <com.google.common.collect.ImmutableEnumMap$2: com.google.common.collect.UnmodifiableIterator iterator()>
 <com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableSet createEntrySet()>
@@ -84,6 +130,32 @@
 <java.util.concurrent.ConcurrentHashMap$EntryIterator: java.util.Map$Entry next()>
 <java.util.concurrent.ConcurrentHashMap$EntrySet: java.util.Iterator iterator()>
 <java.util.concurrent.ConcurrentHashMap$KeySet: java.util.Iterator iterator()>
+<java.util.concurrent.ConcurrentHashMap$Values: java.util.Iterator iterator()>
+<java.util.concurrent.Executors: java.util.concurrent.Callable callable(java.lang.Runnable,java.lang.Object)>
+<java.util.concurrent.Executors: java.util.concurrent.ExecutorService newFixedThreadPool(int,java.util.concurrent.ThreadFactory)>
+<java.util.HashMap: java.util.Iterator newEntryIterator()>
+<java.util.HashMap: java.util.Iterator newKeyIterator()>
+<java.util.HashMap: java.util.Iterator newValueIterator()>
+<java.util.Hashtable$Entry: java.lang.Object clone()>
+<java.util.LinkedList: java.lang.Object clone()>
+<java.util.TreeSet: java.lang.Object clone()>
+<java.util.Hashtable: java.util.Enumeration getEnumeration(int)>
+<java.util.Hashtable: java.util.Iterator getIterator(int)>
+<java.util.IdentityHashMap$EntrySet: java.util.Iterator iterator()>
+<java.util.IdentityHashMap$KeySet: java.util.Iterator iterator()>
+<java.util.IdentityHashMap$Values: java.util.Iterator iterator()>
+<java.util.LinkedHashMap: java.util.Iterator newEntryIterator()>
+<java.util.LinkedHashMap: java.util.Iterator newKeyIterator()>
+<java.util.LinkedHashMap: java.util.Iterator newValueIterator()>
+<java.util.LinkedList: java.util.LinkedList$Entry addBefore(java.lang.Object,java.util.LinkedList$Entry)>
+<java.util.LinkedList: java.util.ListIterator listIterator(int)>
+<java.util.SubList: java.util.ListIterator listIterator(int)>
+<java.util.TreeMap$AscendingSubMap$AscendingEntrySetView: java.util.Iterator iterator()>
+<java.util.TreeMap$EntrySet: java.util.Iterator iterator()>
+<java.util.TreeMap$Values: java.util.Iterator iterator()>
+<java.util.TreeMap: java.util.Iterator keyIterator()>
+<java.util.TreeMap: java.util.NavigableMap subMap(java.lang.Object,boolean,java.lang.Object,boolean)>
+<java.util.Vector: java.util.Enumeration elements()>
 ```
 
 ## Pattern 3 (delegate)
@@ -113,6 +185,7 @@
 <java.beans.FeatureDescriptor: java.lang.ref.Reference createReference(java.lang.Object,boolean)>
 <java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>
 <java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>
+<java.util.LinkedList: java.lang.Object[] toArray()>
 ```
 ### Pattern 5 (hard) 
 ```
@@ -123,6 +196,11 @@
 <java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>
 <java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: boolean contains(java.lang.Object)>
 <java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: java.lang.Object[] toArray()>
+<java.util.concurrent.ConcurrentLinkedQueue: boolean offer(java.lang.Object)>
+<java.util.Hashtable: java.util.Collection values()>
+<java.util.Hashtable: java.util.Set entrySet()>
+<java.util.Hashtable: java.util.Set keySet()>
+<java.util.ServiceLoader: java.util.Iterator parse(java.lang.Class,java.net.URL)>
 ```
 ### Pattern 6 (k-obj static)
 ```
@@ -131,84 +209,7 @@
 # TO CHECK
 ```
 
-<java.util.concurrent.ConcurrentHashMap$Segment: void rehash()>
-<java.util.concurrent.ConcurrentHashMap$Values: java.util.Iterator iterator()>
-<java.util.concurrent.ConcurrentHashMap: java.util.Collection values()>
-<java.util.concurrent.ConcurrentHashMap: java.util.Set entrySet()>
-<java.util.concurrent.ConcurrentHashMap: java.util.Set keySet()>
-<java.util.concurrent.ConcurrentHashMap: void <init>(int,float,int)>
-<java.util.concurrent.ConcurrentLinkedQueue: boolean offer(java.lang.Object)>
-<java.util.concurrent.ConcurrentLinkedQueue: void <init>()>
-<java.util.concurrent.Executors: java.util.concurrent.Callable callable(java.lang.Runnable,java.lang.Object)>
-<java.util.concurrent.Executors: java.util.concurrent.ExecutorService newFixedThreadPool(int,java.util.concurrent.ThreadFactory)>
-<java.util.concurrent.LinkedBlockingQueue: void <init>(int)>
-<java.util.concurrent.LinkedBlockingQueue: void enqueue(java.lang.Object)>
-<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory,java.util.concurrent.RejectedExecutionHandler)>
-<java.util.HashMap: java.lang.Object clone()>
-<java.util.HashMap: java.util.Collection values()>
-<java.util.HashMap: java.util.Iterator newEntryIterator()>
-<java.util.HashMap: java.util.Iterator newKeyIterator()>
-<java.util.HashMap: java.util.Iterator newValueIterator()>
-<java.util.HashMap: java.util.Set entrySet0()>
-<java.util.HashMap: java.util.Set keySet()>
-<java.util.HashMap: void <init>()>
-<java.util.HashMap: void <init>(int,float)>
-<java.util.HashMap: void addEntry(int,java.lang.Object,java.lang.Object,int)>
-<java.util.HashMap: void createEntry(int,java.lang.Object,java.lang.Object,int)>
-<java.util.HashMap: void resize(int)>
-<java.util.HashSet: void <init>()>
-<java.util.HashSet: void <init>(int)>
-<java.util.HashSet: void <init>(int,float)>
-<java.util.HashSet: void <init>(int,float,boolean)>
-<java.util.HashSet: void <init>(java.util.Collection)>
-<java.util.Hashtable$Entry: java.lang.Object clone()>
-<java.util.Hashtable: java.lang.Object clone()>
-<java.util.Hashtable: java.lang.Object put(java.lang.Object,java.lang.Object)>
-<java.util.Hashtable: java.util.Collection values()>
-<java.util.Hashtable: java.util.Enumeration getEnumeration(int)>
-<java.util.Hashtable: java.util.Iterator getIterator(int)>
-<java.util.Hashtable: java.util.Set entrySet()>
-<java.util.Hashtable: java.util.Set keySet()>
-<java.util.Hashtable: void <init>(int,float)>
-<java.util.Hashtable: void rehash()>
-<java.util.IdentityHashMap$EntrySet: java.util.Iterator iterator()>
-<java.util.IdentityHashMap$KeySet: java.util.Iterator iterator()>
-<java.util.IdentityHashMap$Values: java.util.Iterator iterator()>
-<java.util.IdentityHashMap: java.util.Collection values()>
-<java.util.IdentityHashMap: java.util.Set entrySet()>
-<java.util.IdentityHashMap: java.util.Set keySet()>
-<java.util.IdentityHashMap: void init(int)>
-<java.util.IdentityHashMap: void resize(int)>
-<java.util.LinkedHashMap: java.util.Iterator newEntryIterator()>
-<java.util.LinkedHashMap: java.util.Iterator newKeyIterator()>
-<java.util.LinkedHashMap: java.util.Iterator newValueIterator()>
-<java.util.LinkedHashMap: void createEntry(int,java.lang.Object,java.lang.Object,int)>
-<java.util.LinkedHashMap: void init()>
-<java.util.LinkedList: boolean addAll(int,java.util.Collection)>
-<java.util.LinkedList: java.lang.Object clone()>
-<java.util.LinkedList: java.lang.Object[] toArray()>
-<java.util.LinkedList: java.util.LinkedList$Entry addBefore(java.lang.Object,java.util.LinkedList$Entry)>
-<java.util.LinkedList: java.util.ListIterator listIterator(int)>
-<java.util.LinkedList: void <init>()>
-<java.util.ListResourceBundle: void loadLookup()>
-<java.util.ServiceLoader: java.util.Iterator iterator()>
-<java.util.ServiceLoader: java.util.Iterator parse(java.lang.Class,java.net.URL)>
-<java.util.SubList: java.util.ListIterator listIterator(int)>
-<java.util.TreeMap$AscendingSubMap$AscendingEntrySetView: java.util.Iterator iterator()>
-<java.util.TreeMap$EntrySet: java.util.Iterator iterator()>
-<java.util.TreeMap$Values: java.util.Iterator iterator()>
-<java.util.TreeMap: java.lang.Object put(java.lang.Object,java.lang.Object)>
-<java.util.TreeMap: java.util.Collection values()>
-<java.util.TreeMap: java.util.Iterator keyIterator()>
-<java.util.TreeMap: java.util.NavigableMap subMap(java.lang.Object,boolean,java.lang.Object,boolean)>
-<java.util.TreeMap: java.util.NavigableSet navigableKeySet()>
-<java.util.TreeMap: java.util.Set entrySet()>
-<java.util.TreeMap: java.util.TreeMap$Entry buildFromSorted(int,int,int,int,java.util.Iterator,java.io.ObjectInputStream,java.lang.Object)>
-<java.util.TreeSet: java.lang.Object clone()>
-<java.util.TreeSet: void <init>()>
-<java.util.TreeSet: void <init>(java.util.Comparator)>
-<java.util.Vector: java.util.Enumeration elements()>
-<java.util.Vector: void <init>(int,int)>
+
 <java.util.WeakHashMap$EntrySet: java.util.Iterator iterator()>
 <java.util.WeakHashMap$EntrySet: java.util.List deepCopy()>
 <java.util.WeakHashMap$KeySet: java.util.Iterator iterator()>
