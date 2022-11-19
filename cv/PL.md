@@ -3,6 +3,12 @@
 ```
 <antlr.collections.impl.Vector: void <init>(int)>
 <antlr.collections.impl.Vector: void ensureCapacity(int)>
+<com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>()>
+<com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>(int)>
+```
+## pattern 1-1 (k-obj) 
+```
+<com.sun.org.apache.xerces.internal.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
 ```
 ## Pattern 2 (params)
 ```
@@ -60,9 +66,6 @@
 ```
 # TO CHECK
 ```
-<com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>()>
-<com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>(int)>
-<com.sun.org.apache.xerces.internal.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
 <com.sun.org.apache.xerces.internal.util.SymbolTable: void <init>(int)>
 <EDU.purdue.cs.bloat.tree.Expr: void <init>(EDU.purdue.cs.bloat.editor.Type)>
 <EDU.purdue.cs.bloat.tree.LocalExpr: java.lang.Object clone()>
