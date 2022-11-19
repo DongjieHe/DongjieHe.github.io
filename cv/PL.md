@@ -1,31 +1,31 @@
 # Patterns
-## Pattern 1
+## Pattern 1 (array container)
 ```
 <antlr.collections.impl.Vector: void <init>(int)>
 <antlr.collections.impl.Vector: void ensureCapacity(int)>
 ```
-## Pattern 2
+## Pattern 2 (params)
 ```
 <antlr.collections.impl.Vector: java.util.Enumeration elements()>
 <antlr.collections.impl.Vector: java.lang.Object clone()>
 <com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection: java.util.Iterator iterator()>
+<com.google.common.collect.ImmutableEnumMap$2: com.google.common.collect.UnmodifiableIterator iterator()>
 ```
-## Pattern 3
+## Pattern 3 (delegate)
 ```
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.Collection wrapCollection(java.lang.Object,java.util.Collection)>
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.List wrapList(java.lang.Object,java.util.List,com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection)>
 <com.google.common.collect.HashMultimap: void <init>()>
+<com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableMap asImmutable(java.util.EnumMap)>
 ```
-### Pattern 4
+### Pattern 4 (callsite)
 ```
 <com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>
+<com.google.common.collect.ImmutableBiMap: com.google.common.collect.ImmutableBiMap of(java.lang.Object,java.lang.Object)>
 ```
 
 # TO CHECK
 ```
-<com.google.common.collect.ImmutableBiMap: com.google.common.collect.ImmutableBiMap of(java.lang.Object,java.lang.Object)>
-<com.google.common.collect.ImmutableEnumMap$2: com.google.common.collect.UnmodifiableIterator iterator()>
-<com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableMap asImmutable(java.util.EnumMap)>
 <com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableSet createEntrySet()>
 <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[])>
 <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList construct(java.lang.Object[])>
