@@ -9,6 +9,7 @@
 <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>
 <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>
 <java.lang.ThreadLocal$ThreadLocalMap: void resize()>
+<java.util.ArrayList: void <init>(int)>
 ```
 ## pattern 1-1 (k-obj) 
 ```
@@ -24,6 +25,12 @@
 <java.net.InetSocketAddress: void <init>(java.net.InetAddress,int)>
 <java.text.AttributedString: int ensureRunBreak(int,boolean)>
 <java.text.AttributedString: void createRunAttributeDataVectors()>
+<java.util.Collections$SynchronizedMap: java.util.Collection values()>
+<java.util.Collections$SynchronizedMap: java.util.Set entrySet()>
+<java.util.Collections$SynchronizedMap: java.util.Set keySet()>
+<java.util.Collections$UnmodifiableMap: java.util.Set entrySet()>
+<java.util.concurrent.ConcurrentHashMap$Segment: java.lang.Object put(java.lang.Object,int,java.lang.Object,boolean)>
+<java.util.concurrent.ConcurrentHashMap$Segment: java.lang.Object remove(java.lang.Object,int,java.lang.Object)>
 ```
 ## Pattern 2 (params)
 ```
@@ -50,7 +57,35 @@
 <java.awt.geom.Rectangle2D: java.awt.geom.PathIterator getPathIterator(java.awt.geom.AffineTransform)>
 <java.text.AttributedString: java.text.AttributedCharacterIterator getIterator(java.text.AttributedCharacterIterator$Attribute[],int,int)>
 <java.util.AbstractList: java.util.Iterator iterator()>
+<java.util.AbstractList: java.util.List subList(int,int)>
+<java.util.AbstractList: java.util.ListIterator listIterator(int)>
+<java.util.AbstractMap$2: java.util.Iterator iterator()>
+<java.util.AbstractMap: java.util.Collection values()>
+<java.util.Arrays: java.util.List asList(java.lang.Object[])>
+<java.util.Collections$SingletonSet: java.util.Iterator iterator()>
+<java.util.Collections$UnmodifiableCollection: java.util.Iterator iterator()>
+<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1: java.util.Map$Entry next()>
+<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: java.util.Iterator iterator()>
+<java.util.Collections: java.util.Collection synchronizedCollection(java.util.Collection,java.lang.Object)>
+<java.util.Collections: java.util.Collection unmodifiableCollection(java.util.Collection)>
+<java.util.Collections: java.util.Enumeration enumeration(java.util.Collection)>
+<java.util.Collections: java.util.List singletonList(java.lang.Object)>
+<java.util.Collections: java.util.List synchronizedList(java.util.List)>
+<java.util.Collections: java.util.List unmodifiableList(java.util.List)>
+<java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>
+<java.util.Collections: java.util.Map synchronizedMap(java.util.Map)>
+<java.util.Collections: java.util.Map unmodifiableMap(java.util.Map)>
+<java.util.Collections: java.util.Set singleton(java.lang.Object)>
+<java.util.Collections: java.util.Set synchronizedSet(java.util.Set)>
+<java.util.Collections: java.util.Set synchronizedSet(java.util.Set,java.lang.Object)>
+<java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>
+<java.util.concurrent.AbstractExecutorService: java.util.concurrent.RunnableFuture newTaskFor(java.lang.Runnable,java.lang.Object)>
+<java.util.concurrent.atomic.AtomicReferenceFieldUpdater: java.util.concurrent.atomic.AtomicReferenceFieldUpdater newUpdater(java.lang.Class,java.lang.Class,java.lang.String)>
+<java.util.concurrent.ConcurrentHashMap$EntryIterator: java.util.Map$Entry next()>
+<java.util.concurrent.ConcurrentHashMap$EntrySet: java.util.Iterator iterator()>
+<java.util.concurrent.ConcurrentHashMap$KeySet: java.util.Iterator iterator()>
 ```
+
 ## Pattern 3 (delegate)
 ```
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.Collection wrapCollection(java.lang.Object,java.util.Collection)>
@@ -76,6 +111,8 @@
 <com.google.common.collect.Sets: java.util.LinkedHashSet newLinkedHashSet()>
 <com.google.common.collect.Sets: java.util.TreeSet newTreeSet()>
 <java.beans.FeatureDescriptor: java.lang.ref.Reference createReference(java.lang.Object,boolean)>
+<java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>
+<java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>
 ```
 ### Pattern 5 (hard) 
 ```
@@ -83,6 +120,9 @@
 <java.beans.PropertyChangeSupport: void firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)>
 <java.lang.Thread$1: java.lang.Object run()>
 <java.util.AbstractCollection: java.lang.Object[] toArray()>
+<java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>
+<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: boolean contains(java.lang.Object)>
+<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: java.lang.Object[] toArray()>
 ```
 ### Pattern 6 (k-obj static)
 ```
@@ -91,47 +131,6 @@
 # TO CHECK
 ```
 
-
-
-<java.util.AbstractList: java.util.List subList(int,int)>
-<java.util.AbstractList: java.util.ListIterator listIterator(int)>
-<java.util.AbstractMap$2: java.util.Iterator iterator()>
-<java.util.AbstractMap: java.util.Collection values()>
-<java.util.ArrayList: void <init>(int)>
-<java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>
-<java.util.Arrays: java.util.List asList(java.lang.Object[])>
-<java.util.Collections$SingletonSet: java.util.Iterator iterator()>
-<java.util.Collections$SynchronizedMap: java.util.Collection values()>
-<java.util.Collections$SynchronizedMap: java.util.Set entrySet()>
-<java.util.Collections$SynchronizedMap: java.util.Set keySet()>
-<java.util.Collections$UnmodifiableCollection: java.util.Iterator iterator()>
-<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1: java.util.Map$Entry next()>
-<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: boolean contains(java.lang.Object)>
-<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: java.lang.Object[] toArray()>
-<java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet: java.util.Iterator iterator()>
-<java.util.Collections$UnmodifiableMap: java.util.Set entrySet()>
-<java.util.Collections: java.util.Collection synchronizedCollection(java.util.Collection,java.lang.Object)>
-<java.util.Collections: java.util.Collection unmodifiableCollection(java.util.Collection)>
-<java.util.Collections: java.util.Enumeration enumeration(java.util.Collection)>
-<java.util.Collections: java.util.List singletonList(java.lang.Object)>
-<java.util.Collections: java.util.List synchronizedList(java.util.List)>
-<java.util.Collections: java.util.List unmodifiableList(java.util.List)>
-<java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>
-<java.util.Collections: java.util.Map synchronizedMap(java.util.Map)>
-<java.util.Collections: java.util.Map unmodifiableMap(java.util.Map)>
-<java.util.Collections: java.util.Set singleton(java.lang.Object)>
-<java.util.Collections: java.util.Set synchronizedSet(java.util.Set)>
-<java.util.Collections: java.util.Set synchronizedSet(java.util.Set,java.lang.Object)>
-<java.util.Collections: java.util.Set unmodifiableSet(java.util.Set)>
-<java.util.concurrent.AbstractExecutorService: java.util.concurrent.RunnableFuture newTaskFor(java.lang.Runnable,java.lang.Object)>
-<java.util.concurrent.atomic.AtomicReferenceFieldUpdater: java.util.concurrent.atomic.AtomicReferenceFieldUpdater newUpdater(java.lang.Class,java.lang.Class,java.lang.String)>
-<java.util.concurrent.ConcurrentHashMap$EntryIterator: java.util.Map$Entry next()>
-<java.util.concurrent.ConcurrentHashMap$EntrySet: java.util.Iterator iterator()>
-<java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>
-<java.util.concurrent.ConcurrentHashMap$KeySet: java.util.Iterator iterator()>
-<java.util.concurrent.ConcurrentHashMap$Segment: java.lang.Object put(java.lang.Object,int,java.lang.Object,boolean)>
-<java.util.concurrent.ConcurrentHashMap$Segment: java.lang.Object remove(java.lang.Object,int,java.lang.Object)>
-<java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>
 <java.util.concurrent.ConcurrentHashMap$Segment: void rehash()>
 <java.util.concurrent.ConcurrentHashMap$Values: java.util.Iterator iterator()>
 <java.util.concurrent.ConcurrentHashMap: java.util.Collection values()>
