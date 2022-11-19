@@ -16,6 +16,10 @@
 <java.util.Hashtable: void <init>(int,float)>
 <java.util.IdentityHashMap: void init(int)>
 <java.util.Vector: void <init>(int,int)>
+<java.util.WeakHashMap: void <init>()>
+<java.util.WeakHashMap: void <init>(int,float)>
+<javax.swing.event.EventListenerList: void add(java.lang.Class,java.util.EventListener)>
+<javax.swing.event.EventListenerList: void remove(java.lang.Class,java.util.EventListener)>
 ```
 ## pattern 1-1 (k-obj) 
 ```
@@ -76,6 +80,19 @@
 <java.util.TreeMap: java.util.TreeMap$Entry buildFromSorted(int,int,int,int,java.util.Iterator,java.io.ObjectInputStream,java.lang.Object)>
 <java.util.TreeSet: void <init>()>
 <java.util.TreeSet: void <init>(java.util.Comparator)>
+<java.util.WeakHashMap$EntrySet: java.util.List deepCopy()>
+<java.util.WeakHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>
+<java.util.WeakHashMap: java.util.Collection values()>
+<java.util.WeakHashMap: java.util.Set entrySet()>
+<java.util.WeakHashMap: java.util.Set keySet()>
+<java.util.WeakHashMap: void resize(int)>
+<java.util.zip.ZipInputStream: void <init>(java.io.InputStream)>
+<javax.swing.JComponent: javax.swing.ActionMap getActionMap(boolean)>
+<javax.swing.JComponent: javax.swing.ArrayTable getClientProperties()>
+<javax.swing.JComponent: javax.swing.InputMap getInputMap(int,boolean)>
+<javax.swing.JComponent: void <init>()>
+<javax.swing.JRootPane: java.awt.Container createContentPane()>
+<javax.swing.JRootPane: javax.swing.JLayeredPane createLayeredPane()>
 ```
 ## Pattern 2 (params)
 ```
@@ -156,6 +173,9 @@
 <java.util.TreeMap: java.util.Iterator keyIterator()>
 <java.util.TreeMap: java.util.NavigableMap subMap(java.lang.Object,boolean,java.lang.Object,boolean)>
 <java.util.Vector: java.util.Enumeration elements()>
+<java.util.WeakHashMap$EntrySet: java.util.Iterator iterator()>
+<java.util.WeakHashMap$KeySet: java.util.Iterator iterator()>
+<java.util.WeakHashMap$Values: java.util.Iterator iterator()>
 ```
 
 ## Pattern 3 (delegate)
@@ -186,6 +206,7 @@
 <java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>
 <java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>
 <java.util.LinkedList: java.lang.Object[] toArray()>
+<javax.swing.JComponent$KeyboardState: javax.swing.JComponent$IntVector getKeyCodeArray()>
 ```
 ### Pattern 5 (hard) 
 ```
@@ -201,6 +222,7 @@
 <java.util.Hashtable: java.util.Set entrySet()>
 <java.util.Hashtable: java.util.Set keySet()>
 <java.util.ServiceLoader: java.util.Iterator parse(java.lang.Class,java.net.URL)>
+<javax.swing.JComponent: javax.swing.JToolTip createToolTip()>
 ```
 ### Pattern 6 (k-obj static)
 ```
@@ -210,28 +232,7 @@
 ```
 
 
-<java.util.WeakHashMap$EntrySet: java.util.Iterator iterator()>
-<java.util.WeakHashMap$EntrySet: java.util.List deepCopy()>
-<java.util.WeakHashMap$KeySet: java.util.Iterator iterator()>
-<java.util.WeakHashMap$Values: java.util.Iterator iterator()>
-<java.util.WeakHashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>
-<java.util.WeakHashMap: java.util.Collection values()>
-<java.util.WeakHashMap: java.util.Set entrySet()>
-<java.util.WeakHashMap: java.util.Set keySet()>
-<java.util.WeakHashMap: void <init>()>
-<java.util.WeakHashMap: void <init>(int,float)>
-<java.util.WeakHashMap: void resize(int)>
-<java.util.zip.ZipInputStream: void <init>(java.io.InputStream)>
-<javax.swing.event.EventListenerList: void add(java.lang.Class,java.util.EventListener)>
-<javax.swing.event.EventListenerList: void remove(java.lang.Class,java.util.EventListener)>
-<javax.swing.JComponent$KeyboardState: javax.swing.JComponent$IntVector getKeyCodeArray()>
-<javax.swing.JComponent: javax.swing.ActionMap getActionMap(boolean)>
-<javax.swing.JComponent: javax.swing.ArrayTable getClientProperties()>
-<javax.swing.JComponent: javax.swing.InputMap getInputMap(int,boolean)>
-<javax.swing.JComponent: javax.swing.JToolTip createToolTip()>
-<javax.swing.JComponent: void <init>()>
-<javax.swing.JRootPane: java.awt.Container createContentPane()>
-<javax.swing.JRootPane: javax.swing.JLayeredPane createLayeredPane()>
+
 <javax.swing.text.AbstractDocument$BranchElement: void <init>(javax.swing.text.AbstractDocument,javax.swing.text.Element,javax.swing.text.AttributeSet)>
 <javax.swing.text.AbstractDocument$BranchElement: void replace(int,int,javax.swing.text.Element[])>
 <net.sourceforge.pmd.ast.SimpleNode: void jjtAddChild(net.sourceforge.pmd.ast.Node,int)>
