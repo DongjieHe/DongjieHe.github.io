@@ -1,9 +1,16 @@
-# TO CHECK
+# Patterns
+## Pattern 1
 ```
-<antlr.collections.impl.Vector: java.lang.Object clone()>
-<antlr.collections.impl.Vector: java.util.Enumeration elements()>
 <antlr.collections.impl.Vector: void <init>(int)>
 <antlr.collections.impl.Vector: void ensureCapacity(int)>
+```
+## Pattern 2
+```
+<antlr.collections.impl.Vector: java.util.Enumeration elements()>
+<antlr.collections.impl.Vector: java.lang.Object clone()>
+```
+# TO CHECK
+```
 <com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection: java.util.Iterator iterator()>
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.Collection wrapCollection(java.lang.Object,java.util.Collection)>
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.List wrapList(java.lang.Object,java.util.List,com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection)>
