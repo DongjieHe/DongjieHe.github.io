@@ -8,14 +8,21 @@
 ```
 <antlr.collections.impl.Vector: java.util.Enumeration elements()>
 <antlr.collections.impl.Vector: java.lang.Object clone()>
-```
-# TO CHECK
-```
 <com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection: java.util.Iterator iterator()>
+```
+## Pattern 3
+```
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.Collection wrapCollection(java.lang.Object,java.util.Collection)>
 <com.google.common.collect.AbstractMapBasedMultimap: java.util.List wrapList(java.lang.Object,java.util.List,com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection)>
-<com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>
 <com.google.common.collect.HashMultimap: void <init>()>
+```
+### Pattern 4
+```
+<com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>
+```
+
+# TO CHECK
+```
 <com.google.common.collect.ImmutableBiMap: com.google.common.collect.ImmutableBiMap of(java.lang.Object,java.lang.Object)>
 <com.google.common.collect.ImmutableEnumMap$2: com.google.common.collect.UnmodifiableIterator iterator()>
 <com.google.common.collect.ImmutableEnumMap: com.google.common.collect.ImmutableMap asImmutable(java.util.EnumMap)>
