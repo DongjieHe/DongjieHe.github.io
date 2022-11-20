@@ -20,6 +20,32 @@
 <java.util.WeakHashMap: void <init>(int,float)>
 <javax.swing.event.EventListenerList: void add(java.lang.Class,java.util.EventListener)>
 <javax.swing.event.EventListenerList: void remove(java.lang.Class,java.util.EventListener)>
+<javax.swing.text.AbstractDocument$BranchElement: void <init>(javax.swing.text.AbstractDocument,javax.swing.text.Element,javax.swing.text.AttributeSet)>
+<javax.swing.text.AbstractDocument$BranchElement: void replace(int,int,javax.swing.text.Element[])>
+<net.sourceforge.pmd.ast.SimpleNode: void jjtAddChild(net.sourceforge.pmd.ast.Node,int)>
+<org.apache.lucene.index.MultiTermDocs: void <init>(org.apache.lucene.index.IndexReader[],int[])>
+<org.apache.lucene.util.PriorityQueue: void initialize(int)>
+<org.apache.xerces.util.SymbolHash: void <init>()>
+<org.apache.xerces.util.SymbolHash: void <init>(int)>
+<org.apache.xml.utils.ObjectStack: java.lang.Object push(java.lang.Object)>
+<org.apache.xml.utils.ObjectVector: void <init>(int)>
+<org.eclipse.core.internal.registry.KeyedHashSet: void <init>(int,boolean)>
+<org.eclipse.core.internal.registry.KeyedHashSet: void expand()>
+<org.eclipse.core.internal.resources.MarkerSet: void <init>(int)>
+<org.eclipse.core.internal.resources.MarkerSet: void expand()>
+<org.eclipse.core.internal.runtime.ListenerList: void add(java.lang.Object)>
+<org.eclipse.core.internal.runtime.ListenerList: void remove(java.lang.Object)>
+<org.eclipse.core.internal.utils.Queue: void <init>(int,boolean)>
+<org.eclipse.core.internal.utils.Queue: void grow()>
+<org.eclipse.core.runtime.MultiStatus: void add(org.eclipse.core.runtime.IStatus)>
+<org.eclipse.debug.internal.core.ListenerList: void <init>(int)>
+<org.eclipse.debug.internal.core.ListenerList: void add(java.lang.Object)>
+<org.eclipse.debug.internal.core.ListenerList: void remove(java.lang.Object)>
+<org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser: void <init>(org.eclipse.jdt.internal.compiler.parser.Parser)>
+<org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser: void pushOnAstStack(java.lang.Object,boolean)>
+<org.eclipse.jdt.internal.compiler.util.ObjectVector: void <init>()>
+<org.eclipse.jdt.internal.compiler.util.ObjectVector: void add(java.lang.Object)>
+<org.eclipse.jdt.internal.compiler.util.ObjectVector: void addAll(org.eclipse.jdt.internal.compiler.util.ObjectVector)>
 ```
 ## pattern 1-1 (k-obj) 
 ```
@@ -93,6 +119,10 @@
 <javax.swing.JComponent: void <init>()>
 <javax.swing.JRootPane: java.awt.Container createContentPane()>
 <javax.swing.JRootPane: javax.swing.JLayeredPane createLayeredPane()>
+<org.apache.xerces.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
+<org.eclipse.core.internal.resources.MarkerSet: org.eclipse.core.internal.resources.IMarkerSetElement[] elements()>
+<org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] getListeners()>
+<org.eclipse.jdt.internal.compiler.parser.Parser: org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration parse(org.eclipse.jdt.internal.compiler.env.ICompilationUnit,org.eclipse.jdt.internal.compiler.CompilationResult,int,int)>
 ```
 ## Pattern 2 (params)
 ```
@@ -176,6 +206,7 @@
 <java.util.WeakHashMap$EntrySet: java.util.Iterator iterator()>
 <java.util.WeakHashMap$KeySet: java.util.Iterator iterator()>
 <java.util.WeakHashMap$Values: java.util.Iterator iterator()>
+<org.eclipse.jdt.internal.core.Member: org.eclipse.jdt.core.IType getType(java.lang.String,int)>
 ```
 
 ## Pattern 3 (delegate)
@@ -223,6 +254,7 @@
 <java.util.Hashtable: java.util.Set keySet()>
 <java.util.ServiceLoader: java.util.Iterator parse(java.lang.Class,java.net.URL)>
 <javax.swing.JComponent: javax.swing.JToolTip createToolTip()>
+<org.apache.lucene.index.FieldInfos: void addInternal(java.lang.String,boolean,boolean,boolean,boolean,boolean)>
 ```
 ### Pattern 6 (k-obj static)
 ```
@@ -232,39 +264,6 @@
 ```
 
 
-
-<javax.swing.text.AbstractDocument$BranchElement: void <init>(javax.swing.text.AbstractDocument,javax.swing.text.Element,javax.swing.text.AttributeSet)>
-<javax.swing.text.AbstractDocument$BranchElement: void replace(int,int,javax.swing.text.Element[])>
-<net.sourceforge.pmd.ast.SimpleNode: void jjtAddChild(net.sourceforge.pmd.ast.Node,int)>
-<org.apache.lucene.index.FieldInfos: void addInternal(java.lang.String,boolean,boolean,boolean,boolean,boolean)>
-<org.apache.lucene.index.MultiTermDocs: void <init>(org.apache.lucene.index.IndexReader[],int[])>
-<org.apache.lucene.util.PriorityQueue: void initialize(int)>
-<org.apache.xerces.util.SymbolHash: void <init>()>
-<org.apache.xerces.util.SymbolHash: void <init>(int)>
-<org.apache.xerces.util.SymbolHash: void put(java.lang.Object,java.lang.Object)>
-<org.apache.xml.utils.ObjectStack: java.lang.Object push(java.lang.Object)>
-<org.apache.xml.utils.ObjectVector: void <init>(int)>
-<org.eclipse.core.internal.registry.KeyedHashSet: void <init>(int,boolean)>
-<org.eclipse.core.internal.registry.KeyedHashSet: void expand()>
-<org.eclipse.core.internal.resources.MarkerSet: org.eclipse.core.internal.resources.IMarkerSetElement[] elements()>
-<org.eclipse.core.internal.resources.MarkerSet: void <init>(int)>
-<org.eclipse.core.internal.resources.MarkerSet: void expand()>
-<org.eclipse.core.internal.runtime.ListenerList: void add(java.lang.Object)>
-<org.eclipse.core.internal.runtime.ListenerList: void remove(java.lang.Object)>
-<org.eclipse.core.internal.utils.Queue: void <init>(int,boolean)>
-<org.eclipse.core.internal.utils.Queue: void grow()>
-<org.eclipse.core.runtime.MultiStatus: void add(org.eclipse.core.runtime.IStatus)>
-<org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] getListeners()>
-<org.eclipse.debug.internal.core.ListenerList: void <init>(int)>
-<org.eclipse.debug.internal.core.ListenerList: void add(java.lang.Object)>
-<org.eclipse.debug.internal.core.ListenerList: void remove(java.lang.Object)>
-<org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser: void <init>(org.eclipse.jdt.internal.compiler.parser.Parser)>
-<org.eclipse.jdt.internal.compiler.parser.AbstractCommentParser: void pushOnAstStack(java.lang.Object,boolean)>
-<org.eclipse.jdt.internal.compiler.parser.Parser: org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration parse(org.eclipse.jdt.internal.compiler.env.ICompilationUnit,org.eclipse.jdt.internal.compiler.CompilationResult,int,int
-<org.eclipse.jdt.internal.compiler.util.ObjectVector: void <init>()>
-<org.eclipse.jdt.internal.compiler.util.ObjectVector: void add(java.lang.Object)>
-<org.eclipse.jdt.internal.compiler.util.ObjectVector: void addAll(org.eclipse.jdt.internal.compiler.util.ObjectVector)>
-<org.eclipse.jdt.internal.core.Member: org.eclipse.jdt.core.IType getType(java.lang.String,int)>
 <org.eclipse.osgi.framework.internal.core.AbstractBundle: void initializeManifestLocalization()>
 <org.eclipse.osgi.framework.internal.core.KeyedHashSet: void <init>(int,boolean)>
 <org.eclipse.osgi.framework.internal.core.KeyedHashSet: void expand()>
