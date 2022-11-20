@@ -50,6 +50,10 @@
 <org.eclipse.osgi.framework.internal.core.KeyedHashSet: void expand()>
 <org.eclipse.osgi.framework.util.Headers: void <init>(int)>
 <org.eclipse.osgi.framework.util.Headers: void add(java.lang.Object,java.lang.Object)>
+<org.jfree.util.AbstractObjectList: void <init>(int,int)>
+<org.jfree.util.AbstractObjectList: void set(int,java.lang.Object)>
+<sun.awt.util.IdentityArrayList: void <init>(int)>
+<sun.java2d.loops.RenderCache: void <init>(int)>
 ```
 ## pattern 1-1 (k-obj) 
 ```
@@ -128,6 +132,7 @@
 <org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] getListeners()>
 <org.eclipse.jdt.internal.compiler.parser.Parser: org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration parse(org.eclipse.jdt.internal.compiler.env.ICompilationUnit,org.eclipse.jdt.internal.compiler.CompilationResult,int,int)>
 <org.eclipse.osgi.framework.internal.core.AbstractBundle: void initializeManifestLocalization()>
+<sun.java2d.loops.RenderCache: void put(sun.java2d.loops.SurfaceType,sun.java2d.loops.CompositeType,sun.java2d.loops.SurfaceType,java.lang.Object)>
 ```
 ## Pattern 2 (params)
 ```
@@ -212,6 +217,15 @@
 <java.util.WeakHashMap$KeySet: java.util.Iterator iterator()>
 <java.util.WeakHashMap$Values: java.util.Iterator iterator()>
 <org.eclipse.jdt.internal.core.Member: org.eclipse.jdt.core.IType getType(java.lang.String,int)>
+<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createData(java.awt.image.BufferedImage)>
+<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataBC(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType,int)>
+<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataBP(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType)>
+<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataIC(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType)>
+<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataSC(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType,java.awt.image.IndexColorModel)>
+<sun.java2d.pipe.SpanClipRenderer: java.lang.Object startSequence(sun.java2d.SunGraphics2D,java.awt.Shape,java.awt.Rectangle,int[])>
+<sun.nio.cs.StreamDecoder: sun.nio.cs.StreamDecoder forInputStreamReader(java.io.InputStream,java.lang.Object,java.lang.String)>
+<sun.nio.cs.StreamEncoder: sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream,java.lang.Object,java.lang.String)>
+<sun.security.jca.GetInstance: sun.security.jca.GetInstance$Instance getInstance(java.security.Provider$Service,java.lang.Class)>
 ```
 
 ## Pattern 3 (delegate)
@@ -264,24 +278,4 @@
 ### Pattern 6 (k-obj static)
 ```
 <com.google.common.collect.Maps: java.util.Map$Entry immutableEntry(java.lang.Object,java.lang.Object)>
-```
-# TO CHECK
-```
-
-
-
-<org.jfree.util.AbstractObjectList: void <init>(int,int)>
-<org.jfree.util.AbstractObjectList: void set(int,java.lang.Object)>
-<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createData(java.awt.image.BufferedImage)>
-<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataBC(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType,int)>
-<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataBP(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType)>
-<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataIC(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType)>
-<sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createDataSC(java.awt.image.BufferedImage,sun.java2d.loops.SurfaceType,java.awt.image.IndexColorModel)>
-<sun.awt.util.IdentityArrayList: void <init>(int)>
-<sun.java2d.loops.RenderCache: void <init>(int)>
-<sun.java2d.loops.RenderCache: void put(sun.java2d.loops.SurfaceType,sun.java2d.loops.CompositeType,sun.java2d.loops.SurfaceType,java.lang.Object)>
-<sun.java2d.pipe.SpanClipRenderer: java.lang.Object startSequence(sun.java2d.SunGraphics2D,java.awt.Shape,java.awt.Rectangle,int[])>
-<sun.nio.cs.StreamDecoder: sun.nio.cs.StreamDecoder forInputStreamReader(java.io.InputStream,java.lang.Object,java.lang.String)>
-<sun.nio.cs.StreamEncoder: sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream,java.lang.Object,java.lang.String)>
-<sun.security.jca.GetInstance: sun.security.jca.GetInstance$Instance getInstance(java.security.Provider$Service,java.lang.Class)>
 ```
