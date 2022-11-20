@@ -48,6 +48,8 @@
 <org.eclipse.jdt.internal.compiler.util.ObjectVector: void addAll(org.eclipse.jdt.internal.compiler.util.ObjectVector)>
 <org.eclipse.osgi.framework.internal.core.KeyedHashSet: void <init>(int,boolean)>
 <org.eclipse.osgi.framework.internal.core.KeyedHashSet: void expand()>
+<org.eclipse.osgi.framework.util.Headers: void <init>(int)>
+<org.eclipse.osgi.framework.util.Headers: void add(java.lang.Object,java.lang.Object)>
 ```
 ## pattern 1-1 (k-obj) 
 ```
@@ -268,9 +270,6 @@
 
 
 
-
-<org.eclipse.osgi.framework.util.Headers: void <init>(int)>
-<org.eclipse.osgi.framework.util.Headers: void add(java.lang.Object,java.lang.Object)>
 <org.jfree.util.AbstractObjectList: void <init>(int,int)>
 <org.jfree.util.AbstractObjectList: void set(int,java.lang.Object)>
 <sun.awt.image.BufImgSurfaceData: sun.java2d.SurfaceData createData(java.awt.image.BufferedImage)>
