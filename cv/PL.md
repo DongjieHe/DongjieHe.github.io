@@ -46,6 +46,8 @@
 <org.eclipse.jdt.internal.compiler.util.ObjectVector: void <init>()>
 <org.eclipse.jdt.internal.compiler.util.ObjectVector: void add(java.lang.Object)>
 <org.eclipse.jdt.internal.compiler.util.ObjectVector: void addAll(org.eclipse.jdt.internal.compiler.util.ObjectVector)>
+<org.eclipse.osgi.framework.internal.core.KeyedHashSet: void <init>(int,boolean)>
+<org.eclipse.osgi.framework.internal.core.KeyedHashSet: void expand()>
 ```
 ## pattern 1-1 (k-obj) 
 ```
@@ -123,6 +125,7 @@
 <org.eclipse.core.internal.resources.MarkerSet: org.eclipse.core.internal.resources.IMarkerSetElement[] elements()>
 <org.eclipse.debug.internal.core.ListenerList: java.lang.Object[] getListeners()>
 <org.eclipse.jdt.internal.compiler.parser.Parser: org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration parse(org.eclipse.jdt.internal.compiler.env.ICompilationUnit,org.eclipse.jdt.internal.compiler.CompilationResult,int,int)>
+<org.eclipse.osgi.framework.internal.core.AbstractBundle: void initializeManifestLocalization()>
 ```
 ## Pattern 2 (params)
 ```
@@ -264,9 +267,8 @@
 ```
 
 
-<org.eclipse.osgi.framework.internal.core.AbstractBundle: void initializeManifestLocalization()>
-<org.eclipse.osgi.framework.internal.core.KeyedHashSet: void <init>(int,boolean)>
-<org.eclipse.osgi.framework.internal.core.KeyedHashSet: void expand()>
+
+
 <org.eclipse.osgi.framework.util.Headers: void <init>(int)>
 <org.eclipse.osgi.framework.util.Headers: void add(java.lang.Object,java.lang.Object)>
 <org.jfree.util.AbstractObjectList: void <init>(int,int)>
