@@ -1,20 +1,9 @@
 # Can be CS
 ```
-<antlr.actions.cpp.ActionLexer: void <init>(antlr.InputBuffer)>
-<antlr.actions.cpp.ActionLexer: void <init>(java.io.Reader)>
-<antlr.actions.csharp.ActionLexer: void <init>(antlr.InputBuffer)>
-<antlr.actions.csharp.ActionLexer: void <init>(java.io.Reader)>
-<antlr.actions.java.ActionLexer: void <init>(antlr.InputBuffer)>
-<antlr.actions.java.ActionLexer: void <init>(java.io.Reader)>
 <antlr.AlternativeBlock: void <init>(antlr.Grammar)>
 <antlr.AlternativeBlock: void <init>(antlr.Grammar,antlr.Token,boolean)>
 <antlr.AlternativeBlock: void prepareForAnalysis()>
-<antlr.ANTLRLexer: void <init>(antlr.InputBuffer)>
 <antlr.ANTLRLexer: void <init>(antlr.LexerSharedInputState)>
-<antlr.ANTLRLexer: void <init>(java.io.Reader)>
-<antlr.ANTLRTokdefLexer: void <init>(antlr.InputBuffer)>
-<antlr.ANTLRTokdefLexer: void <init>(java.io.Reader)>
-<antlr.CharScanner: void <init>()>
 <antlr.BlockWithImpliedExitPath: void <init>(antlr.Grammar)>
 <antlr.CodeGenerator: void reset()>
 <antlr.collections.impl.IndexedVector: void <init>()>
@@ -27,8 +16,32 @@
 <antlr.CppCodeGenerator: void genBody(antlr.ParserGrammar)>
 <antlr.CppCodeGenerator: void genBody(antlr.TreeWalkerGrammar)>
 <antlr.CppCodeGenerator: void genNextToken()>
-
+<antlr.collections.impl.LList: void insertHead(java.lang.Object)>
 ```
+## container but not used by outside
+```
+<antlr.CodeGenerator: void reset()>
+<antlr.CppCodeGenerator: void gen(antlr.LexerGrammar)>
+<antlr.CppCodeGenerator: void gen(antlr.ParserGrammar)>
+<antlr.CppCodeGenerator: void genBody(antlr.ParserGrammar)>
+<antlr.CppCodeGenerator: void genBody(antlr.TreeWalkerGrammar)>
+```
+## Data wrapper and used locally
+```
+<antlr.actions.cpp.ActionLexer: void <init>(antlr.InputBuffer)>
+<antlr.actions.cpp.ActionLexer: void <init>(java.io.Reader)>
+<antlr.actions.csharp.ActionLexer: void <init>(antlr.InputBuffer)>
+<antlr.actions.csharp.ActionLexer: void <init>(java.io.Reader)>
+<antlr.actions.java.ActionLexer: void <init>(antlr.InputBuffer)>
+<antlr.actions.java.ActionLexer: void <init>(java.io.Reader)>
+<antlr.ANTLRLexer: void <init>(antlr.InputBuffer)>
+<antlr.ANTLRLexer: void <init>(antlr.LexerSharedInputState)>
+<antlr.ANTLRLexer: void <init>(java.io.Reader)>
+<antlr.ANTLRTokdefLexer: void <init>(antlr.InputBuffer)>
+<antlr.ANTLRTokdefLexer: void <init>(java.io.Reader)>
+<antlr.CharScanner: void <init>()>
+```
+
 # TO CHECK
 ```
 
