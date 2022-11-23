@@ -256,7 +256,7 @@
 <java.util.concurrent.ConcurrentHashMap$HashEntry: java.util.concurrent.ConcurrentHashMap$HashEntry[] newArray(int)>
 <java.util.concurrent.ConcurrentHashMap$Segment: java.util.concurrent.ConcurrentHashMap$Segment[] newArray(int)>
 <java.util.LinkedList: java.lang.Object[] toArray()>
-<javax.swing.JComponent$KeyboardState: javax.swing.JComponent$IntVector getKeyCodeArray()>
+// <javax.swing.JComponent$KeyboardState: javax.swing.JComponent$IntVector getKeyCodeArray()>
 ```
 ### Pattern 5 (hard) 
 ```
