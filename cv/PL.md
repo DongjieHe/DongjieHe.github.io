@@ -4,8 +4,8 @@
 <antlr.collections.impl.Vector: void <init>(int)>
 <antlr.collections.impl.Vector: void ensureCapacity(int)>
 <com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>()>
-// <com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>(int)>
-<com.sun.org.apache.xerces.internal.util.SymbolTable: void <init>(int)>
+<com.sun.org.apache.xerces.internal.util.SymbolHash: void <init>(int)>
+// <com.sun.org.apache.xerces.internal.util.SymbolTable: void <init>(int)>
 <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>
 <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>
 <java.lang.ThreadLocal$ThreadLocalMap: void resize()>
