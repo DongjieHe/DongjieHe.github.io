@@ -271,7 +271,7 @@
 <java.util.Hashtable: java.util.Collection values()>
 <java.util.Hashtable: java.util.Set entrySet()>
 <java.util.Hashtable: java.util.Set keySet()>
-<java.util.ServiceLoader: java.util.Iterator parse(java.lang.Class,java.net.URL)>
+// <java.util.ServiceLoader: java.util.Iterator parse(java.lang.Class,java.net.URL)>
 <javax.swing.JComponent: javax.swing.JToolTip createToolTip()>
 <org.apache.lucene.index.FieldInfos: void addInternal(java.lang.String,boolean,boolean,boolean,boolean,boolean)>
 ```
