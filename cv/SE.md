@@ -17,6 +17,7 @@
 <antlr.CppCodeGenerator: void genBody(antlr.TreeWalkerGrammar)>
 <antlr.CppCodeGenerator: void genNextToken()>
 <antlr.collections.impl.LList: void insertHead(java.lang.Object)>
+<antlr.MakeGrammar: antlr.RuleBlock createNextTokenRule(antlr.Grammar,antlr.collections.impl.Vector,java.lang.String)>
 ```
 ## container but not used by outside
 ```
@@ -25,6 +26,29 @@
 <antlr.CppCodeGenerator: void gen(antlr.ParserGrammar)>
 <antlr.CppCodeGenerator: void genBody(antlr.ParserGrammar)>
 <antlr.CppCodeGenerator: void genBody(antlr.TreeWalkerGrammar)>
+<antlr.MakeGrammar: void <init>(antlr.Tool,java.lang.String[],antlr.LLkAnalyzer)>
+<antlr.MakeGrammar: void beginAlt(boolean)>
+<antlr.MakeGrammar: void beginChildList()>
+<antlr.MakeGrammar: void beginExceptionSpec(antlr.Token)>
+<antlr.MakeGrammar: void beginSubRule(antlr.Token,antlr.Token,boolean)>
+<antlr.MakeGrammar: void beginTree(antlr.Token)>
+<antlr.MakeGrammar: void defineRuleName(antlr.Token,java.lang.String,boolean,java.lang.String)>
+<antlr.MakeGrammar: void endChildList()>
+<antlr.MakeGrammar: void oneOrMoreSubRule()>
+<antlr.MakeGrammar: void refAction(antlr.Token)>
+<antlr.MakeGrammar: void refCharLiteral(antlr.Token,antlr.Token,boolean,int,boolean)>
+<antlr.MakeGrammar: void refCharRange(antlr.Token,antlr.Token,antlr.Token,int,boolean)>
+<antlr.MakeGrammar: void refExceptionHandler(antlr.Token,antlr.Token)>
+<antlr.MakeGrammar: void refRule(antlr.Token,antlr.Token,antlr.Token,antlr.Token,int)>
+<antlr.MakeGrammar: void refSemPred(antlr.Token)>
+<antlr.MakeGrammar: void refStringLiteral(antlr.Token,antlr.Token,int,boolean)>
+<antlr.MakeGrammar: void refToken(antlr.Token,antlr.Token,antlr.Token,antlr.Token,boolean,int,boolean)>
+<antlr.MakeGrammar: void refTokenRange(antlr.Token,antlr.Token,antlr.Token,int,boolean)>
+<antlr.MakeGrammar: void refWildcard(antlr.Token,antlr.Token,int)>
+<antlr.MakeGrammar: void reset()>
+<antlr.MakeGrammar: void synPred()>
+<antlr.MakeGrammar: void zeroOrMoreSubRule()>
+<java.util.jar.JarFile: java.util.Enumeration entries()>
 ```
 ## Data wrapper and used locally
 ```
@@ -40,6 +64,7 @@
 <antlr.ANTLRTokdefLexer: void <init>(antlr.InputBuffer)>
 <antlr.ANTLRTokdefLexer: void <init>(java.io.Reader)>
 <antlr.CharScanner: void <init>()>
+<antlr.MakeGrammar: antlr.AlternativeBlock createOptionalRuleRef(java.lang.String,antlr.Token)>
 ```
 
 # TO CHECK
