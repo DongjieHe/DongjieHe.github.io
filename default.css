@@ -113,6 +113,17 @@ a:hover {
   background: #F0F0F8;
 }
 
+.advertisement {
+  border-radius: 6px;
+  margin-top: 5mm;
+  margin-bottom: 1mm;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: #D5F5E3;
+}
+
 .navbar {
   border: none;
   font-size: 19px;
